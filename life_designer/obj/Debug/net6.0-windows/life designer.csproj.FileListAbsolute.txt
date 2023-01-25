@@ -1,0 +1,71 @@
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\bin\Debug\net6.0-windows\life designer.exe
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\bin\Debug\net6.0-windows\life designer.deps.json
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\bin\Debug\net6.0-windows\life designer.runtimeconfig.json
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\bin\Debug\net6.0-windows\life designer.dll
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\bin\Debug\net6.0-windows\life designer.pdb
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer.csproj.AssemblyReference.cache
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\App.g.cs
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer_MarkupCompile.cache
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer_MarkupCompile.lref
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\MainWindow.baml
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer.g.resources
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer.GeneratedMSBuildEditorConfig.editorconfig
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer.AssemblyInfoInputs.cache
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer.AssemblyInfo.cs
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer.csproj.CoreCompileInputs.cache
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer.dll
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\refint\life designer.dll
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer.pdb
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\life designer.genruntimeconfig.cache
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\ref\life designer.dll
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\page\MainPage.g.cs
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\page\Page1.g.cs
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\page\Page2.g.cs
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\page\Page3.g.cs
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\page\Page1.baml
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\page\Page2.baml
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\page\MainPage.baml
+D:\институт\3 курс 1 семестр\Человеко-машинное взаимодействие\life designer\life designer\obj\Debug\net6.0-windows\page\Page3.baml
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer.csproj.AssemblyReference.cache
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\page\MainPage.g.cs
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\page\Page1.g.cs
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\page\Page2.g.cs
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\page\Page3.g.cs
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\App.g.cs
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer_MarkupCompile.cache
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer_MarkupCompile.lref
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer.dll
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\refint\life designer.dll
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer.pdb
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\life designer.exe
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\life designer.deps.json
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\life designer.runtimeconfig.json
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\life designer.dll
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\life designer.pdb
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\System.Data.SqlClient.dll
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\runtimes\win-arm64\native\sni.dll
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\runtimes\win-x64\native\sni.dll
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\runtimes\win-x86\native\sni.dll
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\programming\C#\life designer\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\MainWindow.baml
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\page\MainPage.baml
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\page\Page1.baml
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\page\Page2.baml
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\page\Page3.baml
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer.g.resources
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer.GeneratedMSBuildEditorConfig.editorconfig
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer.AssemblyInfoInputs.cache
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer.AssemblyInfo.cs
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer.csproj.CoreCompileInputs.cache
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer.csproj.CopyComplete
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\life designer.genruntimeconfig.cache
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\ref\life designer.dll
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\add_category.g.cs
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\add_category.baml
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\del_category.g.cs
+D:\programming\C#\life designer\obj\Debug\net6.0-windows\del_category.baml
