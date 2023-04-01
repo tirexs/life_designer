@@ -77,7 +77,7 @@ namespace life_designer {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/life_designer;component/add_category.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/life_designer;V1.0.0.0;component/add_category.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\add_category.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
