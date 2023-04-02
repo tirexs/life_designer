@@ -20,44 +20,38 @@ namespace life_designer
     /// </summary>
     public partial class add_category : Window
     {
-
-
-        readonly SQLDataBase DataBase = new SQLDataBase();
+      
 
         public add_category()
         {
             InitializeComponent();
-            DataBase.OpenConnection();
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT MAX(IdCategory) FROM [Category]", DataBase.SqlConnection);
 
-            int number_Category = Convert.ToInt32(command.ExecuteScalar());
-            string name_Category = TextBox.Text;
-           
-            command.CommandText = "INSERT INTO [Category] (CategoryName) VALUES (@CategoryName)";
-            command.Parameters.AddWithValue("CategoryName", name_Category);
-            command.ExecuteNonQuery();
-            
-            
-            MainWindow.myButton.Add(new Button() { Height = 19.96, Width = 451, Content = name_Category, Name = "ButtonCategory_" + $"{number_Category}" });
-            
+            using (var context = new DataBaseContext())
+            {
+
+                var category = new Category()
+                {
+                    Name = TextBox.Text
+                };
+
+                context.Categorys.Add(category);
+                context.SaveChanges();                    
+            }
+
             MainWindow MW = new MainWindow();
             Hide();
             MW.Show();
             Close();
-
-
-
-
-
-
-
         }
 
         private void Button_cancle_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow MW = new MainWindow();
+            Hide();
+            MW.Show();
             Close();
         }
 
