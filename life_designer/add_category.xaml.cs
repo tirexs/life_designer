@@ -32,9 +32,9 @@ namespace life_designer
             using (var context = new DataBaseContext())
             {
 
-                var category = new Category();
+                var category = new Category()
                 {
-                    Name = TextBox.Text;
+                    Name = TextBox.Text
                 };
 
                 context.Categorys.Add(category);
@@ -49,6 +49,9 @@ namespace life_designer
 
         private void Button_cancle_Click(object sender, RoutedEventArgs e)
         {
+            MainWindow MW = new MainWindow();
+            Hide();
+            MW.Show();
             Close();
         }
 

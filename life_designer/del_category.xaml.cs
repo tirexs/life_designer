@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Data.SqlClient;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -10,11 +12,10 @@ namespace life_designer
     public partial class del_category : Window
     {
 
-        readonly SQLDataBase DataBase = new SQLDataBase();
+        
         public del_category()
         {
             InitializeComponent();
-            DataBase.OpenConnection();
         }
 
         private void Butten_cancle_Click(object sender, RoutedEventArgs e)
@@ -26,10 +27,16 @@ namespace life_designer
 
         private void Button_del_Click(object sender, RoutedEventArgs e)
         {
-            string name_Category = TextBox.Text;
-            SqlCommand command = new SqlCommand("DELETE FROM [Category] WHERE CategoryName = @name", DataBase.SqlConnection);
-            command.Parameters.AddWithValue("name", name_Category);
-            command.ExecuteNonQuery();
+
+            using (var context = new DataBaseContext())
+            {
+
+                var category = context.Categorys.Where(c => c.Name == TextBox.Text).ExecuteDelete();
+
+
+            }
+
+
             MainWindow MW = new MainWindow();
             MW.Show();
             Close();
