@@ -23,25 +23,16 @@ namespace life_designer
     /// </summary>
     public partial class MainWindow : Window
     {
-        readonly SQLDataBase DataBase = new SQLDataBase();
+        
 
         public MainWindow()
         {
             InitializeComponent();
             MainFrame.Content = new MainPage();
 
-            //ObservableCollection<Button> myButton = new ObservableCollection<Button>();
-            DataBase.OpenConnection();
-            update_myButton();
         }
 
         
-
-        static public ObservableCollection<Button> myButton = new ObservableCollection<Button>
-        {
-            //new Button() { Height = 19.96, Width = 451, Content = "Huyovaya_Categoriya", Visibility = Visibility.Visible}
-        };
-
 
         private void Button_Cprivet_Click(object sender, RoutedEventArgs e)
         {
@@ -71,23 +62,7 @@ namespace life_designer
 
         void update_myButton()
         {
-            SqlCommand command = new SqlCommand("SELECT MAX(IdCategory) FROM [Category]", DataBase.SqlConnection);
-
-            int numberCategory = Convert.ToInt32(command.ExecuteScalar());
-
-            StackPanel_Category.Children.Clear();
-            myButton.Clear();
-
-            for (int i = 0; i < numberCategory; i++)
-            {
-                command.CommandText = $"SELECT CategoryName FROM [Category] WHERE IdCategory = {i+1}";
-                string nameButton = Convert.ToString(command.ExecuteScalar());
-                
-                myButton.Add(new Button(){ Height = 19.96, Width = 451, Content = nameButton, Name = "ButtonCategory_"+$"{i}"});
-                StackPanel_Category.Children.Add(myButton[i]);
-                myButton[0].Content = "fsdf";
-                
-            }
+           
 
         }
 
