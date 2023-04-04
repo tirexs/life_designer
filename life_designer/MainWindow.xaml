@@ -17,25 +17,79 @@
                 </StackPanel>
             </Grid>
         </Border>
-        <Border x:Name="bc" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="951" Margin="142,57,0,0" VerticalAlignment="Top" Width="1458" Visibility="Visible">
-            <Frame x:Name="MainFrame" Content="Frame" Width="1458" Height="951" NavigationUIVisibility="Hidden"/>
+        <Border x:Name="bc" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="951" Margin="0,57,0,0" VerticalAlignment="Top" Width="1600" Visibility="Visible">
 
+            <Grid Width="1600" Height="951" RenderTransformOrigin="0.465,0.504" Margin="-1,-1,-1,-1">
+                <StackPanel x:Name="StackPanel_Category" Height="951" Margin="-727,2,360,-2"  >
+                    <TabControl TabStripPlacement="Left" Width="353" Height="378">
+                        <TabControl.Resources>
+                            <SolidColorBrush x:Key="TabControlNormalBorderBrush" Color="#8C8E94"/>
+                            <Style TargetType="{x:Type TabControl}">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                                <Setter Property="Padding" Value="4,4,4,4"/>
+                                <Setter Property="BorderThickness" Value="1"/>
+                                <Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush}"/>
+                                <Setter Property="Background" Value="#F9F9F9"/>
+                                <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                                <Setter Property="VerticalContentAlignment" Value="Center"/>
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type TabControl}">
+                                            <DockPanel>
+                                                <ScrollViewer DockPanel.Dock="Left"
+                                        HorizontalScrollBarVisibility="Disabled"
+                                        VerticalScrollBarVisibility="Auto">
+                                                    <DockPanel LastChildFill="False" IsItemsHost="true" />
+                                                </ScrollViewer>
+                                                <Border x:Name="ContentPanel" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="1" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="0" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                                                    <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                                </Border>
+                                            </DockPanel>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                            <Style TargetType="{x:Type TabItem}">
+                                <Setter Property="Height" Value="50" />
+                                <Setter Property="Width" Value="50" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type TabItem}">
+                                            <Border x:Name="Border" BorderThickness="1,1,0,1" BorderBrush="#8C8E94" CornerRadius="4,0,0,4" Margin="0,0">
+                                                <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsSelected" Value="True">
+                                                    <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
+                                                </Trigger>
+                                                <Trigger Property="IsSelected" Value="False">
+                                                    <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </TabControl.Resources>
+                        <TabItem DockPanel.Dock="Top" Header="aaa" Content="aaaaa" />
+                        <TabItem DockPanel.Dock="Top" Header="bbb" Content="bbbbb" />
+                        <TabItem DockPanel.Dock="Top" Header="ccc" Content="ccccc" />
+                        <TabItem DockPanel.Dock="Top" Header="ddd" Content="ddddd" />
+                        <TabItem DockPanel.Dock="Top" Header="eee" Content="eeeee"/>
+                    </TabControl>
 
-        </Border>
-
-        
-
-        <Border x:Name="bl" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="951" Margin="0,57,0,0" VerticalAlignment="Top" Width="142">
-            <Grid Width="142" Height="951" RenderTransformOrigin="0.465,0.504" Margin="-1,-1,-1,-1">
-                <StackPanel x:Name="StackPanel_Category" Width="142" Height="951"  >
-                    <TextBlock TextWrapping="Wrap" Text="Категории:" FontSize="30" FontFamily="Times New Roman"/>
-                    <Button x:Name="Button_Cprivet" Content="Личное" Click="Button_Cprivet_Click" Height="19.96" Width="142"/>
-                    <Button x:Name="Button_Chome" Content="Дом" Click="Button_Chome_Click" Height="19.96" Width="142"/>
-                    <Button x:Name="Button_Cwork" Content="Работа" Click="Button_Cwork_Click" Height="19.96" Width="142"/>
-                    
                 </StackPanel>
             </Grid>
+
         </Border>
+
+
+
+
 
     </Grid>
 </Window>
