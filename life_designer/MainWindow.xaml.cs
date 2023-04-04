@@ -21,6 +21,7 @@ namespace life_designer
             Items = new ObservableCollection<Item>
             {
                 new Item { Header = "One", Content = "One's content" }
+             
             };
         }
 
