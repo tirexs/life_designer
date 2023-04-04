@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using System.Collections.ObjectModel;
+using System.Windows;
+using System.Windows.Controls;
+
 namespace life_designer
 {
     /// <summary>
@@ -6,13 +9,19 @@ namespace life_designer
     /// </summary>
     public partial class MainWindow : Window
     {
-        
+
+        public ObservableCollection<Item> Items { get; set; }
+
+
+
 
         public MainWindow()
         {
             InitializeComponent();
-            
-
+            Items = new ObservableCollection<Item>
+            {
+                new Item { Header = "One", Content = "One's content" }
+            };
         }
 
         
@@ -45,4 +54,13 @@ namespace life_designer
 
         }
     }
+
+
+    public sealed class Item
+    {
+        public string Header { get; set; }
+        public string Content { get; set; }
+    }
+
+
 }

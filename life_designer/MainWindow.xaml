@@ -21,7 +21,7 @@
 
             <Grid Width="1600" Height="951" RenderTransformOrigin="0.465,0.504" Margin="-1,-1,-1,-1">
 
-                <TabControl TabStripPlacement="Left">
+                <TabControl TabStripPlacement="Left" ItemsSource="{Binding Items}" >
                     <TabControl.Resources>
                         <SolidColorBrush x:Key="TabControlNormalBorderBrush" Color="#8C8E94"/>
                         <Style TargetType="{x:Type TabControl}">
@@ -73,11 +73,28 @@
                             </Setter>
                         </Style>
                     </TabControl.Resources>
-                    <TabItem DockPanel.Dock="Top" Header="aaa" Content="aaaaa" ></TabItem>
-                    <TabItem DockPanel.Dock="Top" Header="bbb" Content="bbbbb" ></TabItem>
-                    <TabItem DockPanel.Dock="Top" Header="ccc" Content="ccccc" ></TabItem>
-                    <TabItem DockPanel.Dock="Top" Header="ddd" Content="ddddd" ></TabItem>
-                    <TabItem DockPanel.Dock="Bottom" Header="eee" Content="eeeee" ></TabItem>
+                    <!--TabItem DockPanel.Dock="Top" Header="aaa" Content="aaaaa" ></TabItem-->
+                    <!--TabItem DockPanel.Dock="Top" Header="bbb" Content="bbbbb" ></TabItem-->
+                    <!--TabItem DockPanel.Dock="Top" Header="ccc" Content="ccccc" ></TabItem-->
+                    <!--abItem DockPanel.Dock="Top" Header="ddd" Content="ddddd" ></TabItem-->
+                    <!--TabItem DockPanel.Dock="Bottom" Header="eee" Content="eeeee" ></TabItem-->
+
+                    <TabControl.ItemTemplate>
+                        <!-- this is the header template-->
+                        <DataTemplate>
+                            <TextBlock
+                    Text="{Binding Header}" />
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                    <TabControl.ContentTemplate>
+                        <!-- this is the body of the TabItem template-->
+                        <DataTemplate>
+                            <TextBlock
+                    Text="{Binding Content}" />
+                        </DataTemplate>
+                    </TabControl.ContentTemplate>
+
+
                 </TabControl>
 
 
