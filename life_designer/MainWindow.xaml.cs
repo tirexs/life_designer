@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -13,16 +14,24 @@ namespace life_designer
         public ObservableCollection<Item> Items { get; set; }
 
 
+        //TabControl table = new TabControl();
 
-
-        public MainWindow()
+		public MainWindow()
         {
             InitializeComponent();
             Items = new ObservableCollection<Item>
             {
-                new Item { Header = "One", Content = "One's content" }
+                new Item { Header = "One", Content = "One's content1" },
+				new Item { Header = "Two", Content = "One's content2" },
+				new Item { Header = "Tri", Content = "One's content3" }
             };
-        }
+
+            foreach(var item in Items)
+            {
+				table.Items.Add(item);
+			}
+
+		}
 
         
 
