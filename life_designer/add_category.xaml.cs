@@ -29,7 +29,6 @@ namespace life_designer
                 context.SaveChanges();                    
             }
             ItemsCollection.AddToCollection(TextBox.Text);
-            
             MainWindow MW = new MainWindow();
             Hide();
             MW.Show();

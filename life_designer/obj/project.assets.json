@@ -3723,19 +3723,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\alexf\\.nuget\\packages\\": {}
+    "C:\\Users\\sarbu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\alexf\\Source\\Repos\\life_designer\\life_designer\\life_designer.csproj",
+      "projectUniqueName": "D:\\programming\\C#\\life_designer\\life_designer\\life_designer.csproj",
       "projectName": "life_designer",
-      "projectPath": "C:\\Users\\alexf\\Source\\Repos\\life_designer\\life_designer\\life_designer.csproj",
-      "packagesPath": "C:\\Users\\alexf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\alexf\\Source\\Repos\\life_designer\\life_designer\\obj\\",
+      "projectPath": "D:\\programming\\C#\\life_designer\\life_designer\\life_designer.csproj",
+      "packagesPath": "C:\\Users\\sarbu\\.nuget\\packages\\",
+      "outputPath": "D:\\programming\\C#\\life_designer\\life_designer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\alexf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\sarbu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3799,7 +3799,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

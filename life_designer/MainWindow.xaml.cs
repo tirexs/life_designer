@@ -1,6 +1,6 @@
 ﻿using System.Collections.ObjectModel;
 using System.Windows;
-using System.Windows.Controls;
+
 
 namespace life_designer
 {
@@ -10,22 +10,27 @@ namespace life_designer
     public partial class MainWindow : Window
     {
 
-        public ObservableCollection<Item> Items { get; set; }
-
-
-
-
         public MainWindow()
         {
             InitializeComponent();
-            Items = new ObservableCollection<Item>
+
+            ItemsCollection.СollectionInitialization();
+
+            foreach (var item in ItemsCollection.Items)
             {
-                new Item { Header = "One", Content = "One's content" }
-             
-            };
+                table.Items.Add(item);
+            }
         }
 
+
+            
+
+	}
+
+
         
+
+
 
         
        
@@ -54,14 +59,10 @@ namespace life_designer
             Close();
 
         }
-    }
-
-
-    public sealed class Item
-    {
-        public string Header { get; set; }
-        public string Content { get; set; }
-    }
-
-
 }
+
+
+   
+
+
+
