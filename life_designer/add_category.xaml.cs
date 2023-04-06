@@ -28,7 +28,7 @@ namespace life_designer
                 context.Categorys.Add(category);
                 context.SaveChanges();                    
             }
-            ItemsCollection.AddToCollection(TextBox.Text);
+            
             MainWindow MW = new MainWindow();
             Hide();
             MW.Show();
