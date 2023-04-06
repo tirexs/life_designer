@@ -75,12 +75,6 @@
                     </TabControl.Resources>
 
                     
-                    <!--<TabItem DockPanel.Dock="Top" Header="aaa" Content="aaaaa" ></TabItem>
-                    <TabItem DockPanel.Dock="Top" Header="bbb" Content="bbbbb" ></TabItem>-->
-                    <!--TabItem DockPanel.Dock="Top" Header="ccc" Content="ccccc" ></TabItem-->
-                    <!--abItem DockPanel.Dock="Top" Header="ddd" Content="ddddd" ></TabItem-->
-                    <!--TabItem DockPanel.Dock="Bottom" Header="eee" Content="eeeee" ></TabItem-->
-
                     <TabControl.ItemTemplate>
                         <!-- this is the header template-->
                         <DataTemplate>
