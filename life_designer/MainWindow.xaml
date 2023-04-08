@@ -17,25 +17,89 @@
                 </StackPanel>
             </Grid>
         </Border>
-        <Border x:Name="bc" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="951" Margin="142,57,0,0" VerticalAlignment="Top" Width="1458" Visibility="Visible">
-            <Frame x:Name="MainFrame" Content="Frame" Width="1458" Height="951" NavigationUIVisibility="Hidden"/>
+        <Border x:Name="bc" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="951" Margin="0,57,0,0" VerticalAlignment="Top" Width="1600" Visibility="Visible">
 
+            <Grid Width="1600" Height="951" RenderTransformOrigin="0.465,0.504" Margin="-1,-1,-1,-1">
 
-        </Border>
+                <TabControl TabStripPlacement="Left" ItemsSource="{Binding Items}" x:Name="table">
+                    <TabControl.Resources>
+                        <SolidColorBrush x:Key="TabControlNormalBorderBrush" Color="#8C8E94"/>
+                        <Style TargetType="{x:Type TabControl}">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                            <Setter Property="Padding" Value="4,4,4,4"/>
+                            <Setter Property="BorderThickness" Value="1"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource TabControlNormalBorderBrush}"/>
+                            <Setter Property="Background" Value="#F9F9F9"/>
+                            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                            <Setter Property="VerticalContentAlignment" Value="Center"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TabControl">
+                                        <DockPanel>
+                                            <ScrollViewer DockPanel.Dock="Left"
+                            HorizontalScrollBarVisibility="Disabled"
+                            VerticalScrollBarVisibility="Auto">
+                                                <StackPanel IsItemsHost="True" Orientation="Vertical"/>
+                                            </ScrollViewer>
+                                            <Border x:Name="ContentPanel" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Grid.Column="1" KeyboardNavigation.DirectionalNavigation="Contained" Grid.Row="0" KeyboardNavigation.TabIndex="2" KeyboardNavigation.TabNavigation="Local">
+                                                <ContentPresenter x:Name="PART_SelectedContentHost" ContentSource="SelectedContent" Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                            </Border>
+                                        </DockPanel>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                        <Style TargetType="TabItem">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="TabItem">
+                                        <Border Name="Border" BorderThickness="1,1,0,1" BorderBrush="#8C8E94" CornerRadius="4,0,0,4" Margin="0,0">
+                                            <ContentPresenter x:Name="ContentSite"
+                                        VerticalAlignment="Center"
+                                        HorizontalAlignment="Center"
+                                        ContentSource="Header"
+                                        Margin="10,2"/>
+                                        </Border>
+                                        <ControlTemplate.Triggers>
+                                            <Trigger Property="IsSelected" Value="True">
+                                                <Setter TargetName="Border" Property="Background" Value="LightSkyBlue" />
+                                            </Trigger>
+                                            <Trigger Property="IsSelected" Value="False">
+                                                <Setter TargetName="Border" Property="Background" Value="GhostWhite" />
+                                            </Trigger>
+                                        </ControlTemplate.Triggers>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TabControl.Resources>
 
-        
-
-        <Border x:Name="bl" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="951" Margin="0,57,0,0" VerticalAlignment="Top" Width="142">
-            <Grid Width="142" Height="951" RenderTransformOrigin="0.465,0.504" Margin="-1,-1,-1,-1">
-                <StackPanel x:Name="StackPanel_Category" Width="142" Height="951"  >
-                    <TextBlock TextWrapping="Wrap" Text="Категории:" FontSize="30" FontFamily="Times New Roman"/>
-                    <Button x:Name="Button_Cprivet" Content="Личное" Click="Button_Cprivet_Click" Height="19.96" Width="142"/>
-                    <Button x:Name="Button_Chome" Content="Дом" Click="Button_Chome_Click" Height="19.96" Width="142"/>
-                    <Button x:Name="Button_Cwork" Content="Работа" Click="Button_Cwork_Click" Height="19.96" Width="142"/>
                     
-                </StackPanel>
+                    <TabControl.ItemTemplate>
+                        <!-- this is the header template-->
+                        <DataTemplate>
+                            <TextBlock
+                    Text="{Binding Header}" />
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+                    <TabControl.ContentTemplate>
+                        <!-- this is the body of the TabItem template-->
+                        <DataTemplate>
+                            <TextBlock
+                    Text="{Binding Content}" />
+                        </DataTemplate>
+                    </TabControl.ContentTemplate>
+
+                </TabControl>
+
+
             </Grid>
+
         </Border>
+
+
+
+
 
     </Grid>
 </Window>
