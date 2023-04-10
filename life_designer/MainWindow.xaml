@@ -74,7 +74,7 @@
                         </Style>
                     </TabControl.Resources>
 
-                    
+
                     <TabControl.ItemTemplate>
                         <!-- this is the header template-->
                         <DataTemplate>
@@ -82,11 +82,20 @@
                     Text="{Binding Header}" />
                         </DataTemplate>
                     </TabControl.ItemTemplate>
+
                     <TabControl.ContentTemplate>
                         <!-- this is the body of the TabItem template-->
                         <DataTemplate>
-                            <TextBlock
-                    Text="{Binding Content}" />
+                            <ListView ItemsSource="{Binding Content}">
+                                <ListView.View>
+                                    <GridView>
+                                        <!--<GridViewColumn Header="№" />-->
+                                        <GridViewColumn Header="Задача" />
+                                    </GridView>
+                                </ListView.View>
+
+
+                            </ListView>
                         </DataTemplate>
                     </TabControl.ContentTemplate>
 

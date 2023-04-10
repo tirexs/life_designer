@@ -8,9 +8,9 @@ namespace life_designer
     [Table("Category")]
     public class Category
     {
-
+        [Column("Id")]
         public int Id { get; set; }
-        [Required]
+        [Column("Name")]
         public string Name { get; set; }
         public virtual ICollection<Data> Datas { get; set;}
 
