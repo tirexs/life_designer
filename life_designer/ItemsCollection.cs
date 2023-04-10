@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace life_designer
@@ -13,22 +15,23 @@ namespace life_designer
         {
             using (var context = new DataBaseContext())
             {
-
-                var category = context.Categorys.Select(n => n.Name).ToList();
                 Items.Clear();
-                foreach (var item in category)
-                {
-                    AddToCollection(item);
-                }
+                var category = context.Categorys.Select(n => n.Name).ToList();
 
+                foreach (var Cname in category)
+                {
+                    var id = context.Categorys.Where(n => n.Name == Cname).Select(n => n.Id);
+                    var contents = context.datas.Include(t => t.Category).Where(t => t.IdCategory == id.First()).Select(x => x.Text).ToList();
+                    AddToCollection(Cname, contents);
+                }              
             }
         }
 
 
 
-        public static void AddToCollection(string n)
+        public static void AddToCollection(string n, List<string> t)
         {
-            Items.Add(new Item { Header = n, Content = "One's content1" });
+            Items.Add(new Item { Header = n, Content = t});
         }
 
 
@@ -36,7 +39,7 @@ namespace life_designer
         public sealed class Item
         {
             public string Header { get; set; }
-            public string Content { get; set; }
+            public List<string> Content { get; set; }
         }
 
     }
