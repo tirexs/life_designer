@@ -10,8 +10,8 @@
         <Border x:Name="bu" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="57" VerticalAlignment="Top" Width="1600">
             <Grid Width="1600" Height="57" Margin="-1,-1,-1,-1">
                 <StackPanel Orientation="Horizontal">
-                    <Button x:Name="add_category" Content="добавление категории" Click="add_category_Click" Width="142"/>
-                    <Button x:Name="del_category" Content="удаление категории" Width="142" Click="del_category_Click"/>
+                    <Button x:Name="add_category" Content="добавление категории" Command="{Binding AddCategory}" Width="142"/>
+                    <Button x:Name="del_category" Content="удаление категории" Command="{Binding RemoveCategory}" Width="142"/>
                     <Button x:Name="add_element" Content="добавление элемента" Width="142"/>
                     <Button x:Name="del_element" Content="удаление элемента" Width="142"/>
                 </StackPanel>
