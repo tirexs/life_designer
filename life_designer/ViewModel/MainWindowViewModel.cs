@@ -1,13 +1,16 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using life_designer.Infrastructure;
+using life_designer.Model;
+using life_designer.View;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
+using System.Windows.Input;
+using static System.Net.Mime.MediaTypeNames;
 
-namespace life_designer.ViewModels
+namespace life_designer.ViewModel
 {
-    public class MainWindowViewModel : INotifyPropertyChanged
+    public class MainWindowViewModel : ViewModelBase
     {
 
 
@@ -16,10 +19,12 @@ namespace life_designer.ViewModels
             
             Items = new ObservableCollection<Item>();
             СollectionInitialization(Items);
-
+            RemoveCategoryCommand = new RelayCommand(RemoveCategory);
+            AddCategoryCommand = new RelayCommand(AddCategory);
 
         }
 
+        private ObservableCollection<Item> _items;
         public ObservableCollection<Item> Items
         {
             get { return _items; }
@@ -57,32 +62,26 @@ namespace life_designer.ViewModels
 
 
 
-        private RelayCommand addCategory;
-        private RelayCommand removeCategory;
-        private ObservableCollection<Item> _items;
-        public RelayCommand AddCategory
+        public ICommand AddCategoryCommand { get; private set; }
+
+        private void AddCategory(object parameter)
         {
-            get
+            using (var context = new DataBaseContext())
             {
-                return addCategory ??
-                  (addCategory = new RelayCommand(obj =>
-                  {
-                      add_category AD = new add_category();
-                      AD.Show();
-                  }));
+                Add_category AD = new Add_category();
+                AD.Show();
             }
         }
 
-        public RelayCommand RemoveCategory
+
+        public ICommand RemoveCategoryCommand { get; private set; }
+
+        private void RemoveCategory(object parameter)
         {
-            get
+            using (var context = new DataBaseContext())
             {
-                return removeCategory ??
-                  (removeCategory = new RelayCommand(obj =>
-                  {
-                      del_category DC = new del_category();
-                      DC.Show();
-                  }));
+                Del_category DC = new Del_category();
+                DC.Show();
             }
         }
 
@@ -91,11 +90,6 @@ namespace life_designer.ViewModels
 
 
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
-        {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
-        }
+        
     }
 }

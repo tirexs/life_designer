@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
-namespace life_designer
+namespace life_designer.Model
 {
     [Table("Data")]
     public class Data

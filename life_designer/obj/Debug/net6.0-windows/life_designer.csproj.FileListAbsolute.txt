@@ -75,7 +75,11 @@ C:\Users\alexf\Source\Repos\life_designer\life_designer\obj\Debug\net6.0-windows
 C:\Users\alexf\Source\Repos\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer.genruntimeconfig.cache
 C:\Users\alexf\Source\Repos\life_designer\life_designer\obj\Debug\net6.0-windows\ref\life_designer.dll
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer.csproj.AssemblyReference.cache
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Add_category.g.cs
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Del_category.g.cs
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\MainWindow.g.cs
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\App.g.cs
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer_MarkupCompile.cache
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer_MarkupCompile.lref
 D:\programming\C#\life_designer\life_designer\bin\Debug\net6.0-windows\life_designer.exe
@@ -133,6 +137,9 @@ D:\programming\C#\life_designer\life_designer\bin\Debug\net6.0-windows\runtimes\
 D:\programming\C#\life_designer\life_designer\bin\Debug\net6.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\programming\C#\life_designer\life_designer\bin\Debug\net6.0-windows\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 D:\programming\C#\life_designer\life_designer\bin\Debug\net6.0-windows\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Add_category.baml
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Del_category.baml
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\MainWindow.baml
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer.g.resources
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer.GeneratedMSBuildEditorConfig.editorconfig
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer.AssemblyInfoInputs.cache
@@ -144,9 +151,3 @@ D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\refint\li
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer.pdb
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer.genruntimeconfig.cache
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\ref\life_designer.dll
-D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\Views\MainWindow.g.cs
-D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\Views\MainWindow.baml
-D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\Views\add_category.g.cs
-D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\Views\del_category.g.cs
-D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\Views\add_category.baml
-D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\Views\del_category.baml

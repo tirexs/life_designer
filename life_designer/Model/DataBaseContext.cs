@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Configuration;
 
-namespace life_designer
+namespace life_designer.Model
 {
     public class DataBaseContext : DbContext
     {

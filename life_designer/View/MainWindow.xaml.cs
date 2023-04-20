@@ -1,9 +1,8 @@
-﻿using life_designer.ViewModels;
-using System.Collections.ObjectModel;
+﻿using life_designer.ViewModel;
 using System.Windows;
 
 
-namespace life_designer
+namespace life_designer.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -14,8 +13,8 @@ namespace life_designer
         public MainWindow()
         {
             InitializeComponent();
-
             DataContext = new MainWindowViewModel();
+            
         }
 
         

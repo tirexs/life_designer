@@ -1,0 +1,20 @@
+﻿<Window x:Class="life_designer.View.Del_category"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:life_designer.ViewModel"
+        mc:Ignorable="d"
+        Title="Del_category" Height="198" Width="282">
+
+    <Window.DataContext>
+        <vm:Del_categoryViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Button Command="{Binding RemoveCategoryCommand}" Content="удалить" HorizontalAlignment="Left" Margin="54,136,0,0" VerticalAlignment="Top"/>
+        <Button Command="{Binding CloseWindowCommand}" Content="отмена" HorizontalAlignment="Left" Margin="180,136,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.755,-0.173"/>
+        <TextBox Text="{Binding Text}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"/>
+
+    </Grid>
+</Window>
