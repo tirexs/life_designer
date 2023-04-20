@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\programming\C#\life_designer\life_designer\App.xaml
-3-1509469632
+3-593408112
 
-11-372031649
+15-2147249194
 2231659034739
-add_category.xaml;del_category.xaml;MainWindow.xaml;
+View\Add_category.xaml;View\Del_category.xaml;View\MainWindow.xaml;
 
-True
+False
 
