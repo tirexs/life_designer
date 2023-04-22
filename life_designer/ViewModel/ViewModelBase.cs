@@ -10,8 +10,8 @@ namespace life_designer.ViewModel
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
+
+        public virtual void OnPropertyChanged([CallerMemberName] string prop = "")
         {
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));

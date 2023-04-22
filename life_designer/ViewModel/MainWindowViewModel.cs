@@ -5,41 +5,36 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace life_designer.ViewModel
 {
     public class MainWindowViewModel : ViewModelBase
     {
 
-
+        public ObservableCollection<Item> Items { get; set; }
         public MainWindowViewModel() 
         {
-            
             Items = new ObservableCollection<Item>();
             СollectionInitialization(Items);
             RemoveCategoryCommand = new RelayCommand(RemoveCategory);
             AddCategoryCommand = new RelayCommand(AddCategory);
-
         }
 
-        private ObservableCollection<Item> _items;
-        public ObservableCollection<Item> Items
-        {
-            get { return _items; }
-            set
-            {
-                _items = value;
-                OnPropertyChanged("Items");
-            }
-        }
+        
 
         public sealed class Item
         {
             public string Header { get; set; }
             public List<string> Content { get; set; }
         }
+
+
+
+      
+
+
 
         public void СollectionInitialization(ObservableCollection<Item> Items)
         {
@@ -54,9 +49,14 @@ namespace life_designer.ViewModel
                     var contents = context.datas.Include(t => t.Category).Where(t => t.IdCategory == id.First()).Select(x => x.Text).ToList();
                     Items.Add(new Item { Header = Cname, Content = contents });
                 }
+                //var mw = new MainWindow();
+                //mw.table.Items.Refresh();
+                
+                OnPropertyChanged(nameof(Items));
+                
+
             }
         }
-
 
 
 
@@ -65,12 +65,9 @@ namespace life_designer.ViewModel
         public ICommand AddCategoryCommand { get; private set; }
 
         private void AddCategory(object parameter)
-        {
-            using (var context = new DataBaseContext())
-            {
-                Add_category AD = new Add_category();
-                AD.Show();
-            }
+        {            
+            Add_category AD = new Add_category();
+            AD.Show();            
         }
 
 
@@ -78,18 +75,9 @@ namespace life_designer.ViewModel
 
         private void RemoveCategory(object parameter)
         {
-            using (var context = new DataBaseContext())
-            {
-                Del_category DC = new Del_category();
-                DC.Show();
-            }
+            Del_category DC = new Del_category();
+            DC.Show();
         }
 
-
-
-
-
-
-        
     }
 }
