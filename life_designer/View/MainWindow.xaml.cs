@@ -12,9 +12,7 @@ namespace life_designer.View
 
         public MainWindow()
         {
-            InitializeComponent();
-            DataContext = new MainWindowViewModel();
-            
+            InitializeComponent();            
         }
 
         

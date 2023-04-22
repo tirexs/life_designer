@@ -1,10 +1,10 @@
 ﻿using life_designer.Infrastructure;
 using life_designer.Model;
 using life_designer.View;
+using System;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-
 namespace life_designer.ViewModel
 {
     public class Add_categoryViewModel : ViewModelBase
@@ -24,7 +24,10 @@ namespace life_designer.ViewModel
                 text = value;
                 OnPropertyChanged("Text");
             }
-        }            
+        }
+
+       
+
 
         public ICommand AddCategoryCommand { get; private set; }
 
@@ -40,7 +43,8 @@ namespace life_designer.ViewModel
 
                 context.Categorys.Add(category);
                 context.SaveChanges();
-                OnPropertyChanged("Items");
+                var mwvm = new MainWindowViewModel();
+                mwvm.СollectionInitialization(mwvm.Items);
                 CloseWindowCommand.Execute(null);
             }
         }
