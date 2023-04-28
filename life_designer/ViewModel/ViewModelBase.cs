@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -10,11 +11,13 @@ namespace life_designer.ViewModel
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        
-        public void OnPropertyChanged([CallerMemberName] string prop = "")
+
+        public void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
             if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
 
         public void Dispose()
@@ -23,7 +26,7 @@ namespace life_designer.ViewModel
         }
 
 
-
+        
 
 
     }

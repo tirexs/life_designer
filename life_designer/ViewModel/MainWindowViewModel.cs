@@ -1,12 +1,15 @@
 ﻿using life_designer.Infrastructure;
+using life_designer.Interface;
 using life_designer.Model;
 using life_designer.View;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Collections.Specialized;
 using System.Linq;
+using System.Windows.Controls;
 using System.Windows.Input;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace life_designer.ViewModel
 {
@@ -16,43 +19,45 @@ namespace life_designer.ViewModel
 
         public MainWindowViewModel() 
         {
-            
-            Items = new ObservableCollection<Item>();
-            СollectionInitialization(Items);
+            tabs = new ObservableCollection<ITab>();
+            tabs.CollectionChanged += TabsCollectionChanged;
+            Tabs = tabs;
+            СollectionInitialization();
             RemoveCategoryCommand = new RelayCommand(RemoveCategory);
             AddCategoryCommand = new RelayCommand(AddCategory);
 
         }
 
-        private ObservableCollection<Item> _items;
-        public ObservableCollection<Item> Items
+        private void TabsCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e)
         {
-            get { return _items; }
-            set
+            ITab tab;
+
+            switch (e.Action)
             {
-                _items = value;
-                OnPropertyChanged("Items");
+                case NotifyCollectionChangedAction.Add: // если добавление
+                    tab = (ITab)e.NewItems[0];
+                    break;
             }
         }
 
-        public sealed class Item
-        {
-            public string Header { get; set; }
-            public List<string> Content { get; set; }
-        }
+        private readonly ObservableCollection<ITab> tabs;
 
-        public void СollectionInitialization(ObservableCollection<Item> Items)
+        public ICollection<ITab> Tabs { get; }
+
+
+
+        public void СollectionInitialization()
         {
             using (var context = new DataBaseContext())
             {
-                Items.Clear();
+                Tabs.Clear();
                 var category = context.Categorys.Select(n => n.Name).ToList();
 
                 foreach (var Cname in category)
                 {
                     var id = context.Categorys.Where(n => n.Name == Cname).Select(n => n.Id);
                     var contents = context.datas.Include(t => t.Category).Where(t => t.IdCategory == id.First()).Select(x => x.Text).ToList();
-                    Items.Add(new Item { Header = Cname, Content = contents });
+                    Tabs.Add(new ItemsCollection (Cname, contents));
                 }
             }
         }
@@ -66,11 +71,12 @@ namespace life_designer.ViewModel
 
         private void AddCategory(object parameter)
         {
-            using (var context = new DataBaseContext())
-            {
-                Add_category AD = new Add_category();
-                AD.Show();
-            }
+            Tabs.Add(new ItemsCollection("alkjlksd", new List<string>()));
+            //using (var context = new DataBaseContext())
+            //{
+            //    Add_category AD = new Add_category();
+            //    AD.Show();
+            //}
         }
 
 

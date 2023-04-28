@@ -40,6 +40,7 @@ namespace life_designer.ViewModel
 
                 context.Categorys.Add(category);
                 context.SaveChanges();
+                MainWindowViewModel mn = new MainWindowViewModel();
                 OnPropertyChanged("Items");
                 CloseWindowCommand.Execute(null);
             }
