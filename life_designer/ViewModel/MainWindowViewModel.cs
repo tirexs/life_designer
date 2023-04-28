@@ -23,7 +23,7 @@ namespace life_designer.ViewModel
 
         
 
-        public sealed class Item
+        public class Item
         {
             public string Header { get; set; }
             public List<string> Content { get; set; }
