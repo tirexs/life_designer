@@ -1,7 +1,6 @@
 ﻿using life_designer.Infrastructure;
 using life_designer.Model;
 using life_designer.View;
-using Microsoft.VisualBasic;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows;

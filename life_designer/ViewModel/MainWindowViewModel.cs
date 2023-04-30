@@ -16,6 +16,7 @@ namespace life_designer.ViewModel
             СollectionInitialization();
             RemoveCategoryCommand = new RelayCommand(RemoveCategory);
             AddCategoryCommand = new RelayCommand(AddCategory);
+            AddTaskCommand = new RelayCommand(AddTask);
 
         }
 
@@ -47,10 +48,8 @@ namespace life_designer.ViewModel
 
         private void AddCategory(object parameter)
         {
-            //Tabs.Add(new ItemsCollection("alkjlksd", new List<string>()));
-            Add_category AD = new Add_category();
-            AD.Show();
-            
+            Add_category AC = new Add_category();
+            AC.Show();  
         }
 
 
@@ -58,18 +57,21 @@ namespace life_designer.ViewModel
 
         private void RemoveCategory(object parameter)
         {
-            using (var context = new DataBaseContext())
-            {
-                Del_category DC = new Del_category();
-                DC.Show();
-            }
+            Del_category DC = new Del_category();
+            DC.Show();
+        }
+
+        public ICommand AddTaskCommand { get; private set; }
+
+        private void AddTask(object parameter)
+        {
+            Add_task AT = new Add_task();
+            AT.Show();
         }
 
 
 
 
 
-
-        
     }
 }
