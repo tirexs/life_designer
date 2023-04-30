@@ -2,7 +2,9 @@
 using life_designer.Model;
 using life_designer.View;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows;
 using System.Windows.Input;
 
@@ -36,6 +38,14 @@ namespace life_designer.ViewModel
             using (var context = new DataBaseContext())
             {
                 var category = context.Categorys.Where(c => c.Name == Text).ExecuteDelete();
+                foreach (var coll in ItemsCollection.Items)
+                {
+                    if (coll.Name == Text)
+                    {
+                        ItemsCollection.Items.Remove(coll);
+                        break;
+                    }
+                }
                 CloseWindowCommand.Execute(null);
             }
         }
