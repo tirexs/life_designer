@@ -3,12 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:life_designer.ViewModel"
+        xmlns:vm="clr-namespace:life_designer.ViewModel"
+        xmlns:vx="clr-namespace:life_designer.Model"
         mc:Ignorable="d"
         Title="MainWindow" Height="1024" Width="1600">
 
     <Window.DataContext>
-        <local:MainWindowViewModel/>
+        <vm:MainWindowViewModel/>
     </Window.DataContext>
 
 
@@ -29,7 +30,7 @@
 
             <Grid Width="1600" Height="951" RenderTransformOrigin="0.465,0.504" Margin="-1,-1,-1,-1">
 
-                <TabControl TabStripPlacement="Left" ItemsSource="{Binding Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" x:Name="table">
+                <TabControl TabStripPlacement="Left" ItemsSource="{Binding Source={x:Static vx:ItemsCollection.Items}, Mode=OneWay}" x:Name="table">
                     <TabControl.Resources>
                         <SolidColorBrush x:Key="TabControlNormalBorderBrush" Color="#8C8E94"/>
                         <Style TargetType="{x:Type TabControl}">
@@ -87,7 +88,7 @@
                         <!-- this is the header template-->
                         <DataTemplate>
                             <TextBlock
-                    Text="{Binding Header}" />
+                    Text="{Binding Name}" />
                         </DataTemplate>
                     </TabControl.ItemTemplate>
 

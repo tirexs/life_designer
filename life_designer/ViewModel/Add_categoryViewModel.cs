@@ -3,33 +3,21 @@ using life_designer.Model;
 using life_designer.View;
 using Microsoft.VisualBasic;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
-using static life_designer.ViewModel.MainWindowViewModel;
 
 namespace life_designer.ViewModel
 {
     public class Add_categoryViewModel : ViewModelBase
     {
-        
 
         public Add_categoryViewModel()
         {
-            
             CloseWindowCommand = new RelayCommand(CloseWindow);
             AddCategoryCommand = new RelayCommand(AddCategory);
         }
-
-        public Add_categoryViewModel(ObservableCollection<MainWindowViewModel.Item> items)
-        {
-            this.items = items;
-        }
-
         private string text;
-        ObservableCollection<MainWindowViewModel.Item> items { get; set; }
-
         public string Text
         {
             get { return text; }
@@ -38,10 +26,7 @@ namespace life_designer.ViewModel
                 text = value;
                 OnPropertyChanged("Text");
             }
-        }
-
-       
-
+        }            
 
         public ICommand AddCategoryCommand { get; private set; }
 
@@ -57,7 +42,7 @@ namespace life_designer.ViewModel
 
                 context.Categorys.Add(category);
                 context.SaveChanges();
-                items.Add(new Item { Header = Text, Content = new List<string>() });
+                ItemsCollection.Items.Add(new Item { Name = Text, Content = new List<string>() });
                 CloseWindowCommand.Execute(null);
             }
         }

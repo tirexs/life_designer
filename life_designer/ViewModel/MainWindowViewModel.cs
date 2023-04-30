@@ -2,8 +2,6 @@
 using life_designer.Model;
 using life_designer.View;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 
@@ -12,44 +10,34 @@ namespace life_designer.ViewModel
     public class MainWindowViewModel : ViewModelBase
     {
 
-        public ObservableCollection<Item> Items { get; set; }
+
         public MainWindowViewModel() 
         {
-            Items = new ObservableCollection<Item>();
-            СollectionInitialization(Items);
+            СollectionInitialization();
             RemoveCategoryCommand = new RelayCommand(RemoveCategory);
             AddCategoryCommand = new RelayCommand(AddCategory);
+
         }
 
         
 
-        public class Item
-        {
-            public string Header { get; set; }
-            public List<string> Content { get; set; }
-        }
 
-
-
-      
-
-
-
-        public void СollectionInitialization(ObservableCollection<Item> Items)
+        public void СollectionInitialization()
         {
             using (var context = new DataBaseContext())
             {
-                Items.Clear();
+                ItemsCollection.Items.Clear();
                 var category = context.Categorys.Select(n => n.Name).ToList();
 
                 foreach (var Cname in category)
                 {
                     var id = context.Categorys.Where(n => n.Name == Cname).Select(n => n.Id);
                     var contents = context.datas.Include(t => t.Category).Where(t => t.IdCategory == id.First()).Select(x => x.Text).ToList();
-                    Items.Add(new Item { Header = Cname, Content = contents });
+                    ItemsCollection.Items.Add(new Item{Name = Cname, Content = contents});
                 }
             }
         }
+
 
 
 
@@ -59,9 +47,10 @@ namespace life_designer.ViewModel
 
         private void AddCategory(object parameter)
         {
-            Add_categoryViewModel acvm = new Add_categoryViewModel(Items);
+            //Tabs.Add(new ItemsCollection("alkjlksd", new List<string>()));
             Add_category AD = new Add_category();
             AD.Show();
+            
         }
 
 
@@ -69,9 +58,18 @@ namespace life_designer.ViewModel
 
         private void RemoveCategory(object parameter)
         {
-            Del_category DC = new Del_category();
-            DC.Show();
+            using (var context = new DataBaseContext())
+            {
+                Del_category DC = new Del_category();
+                DC.Show();
+            }
         }
 
+
+
+
+
+
+        
     }
 }
