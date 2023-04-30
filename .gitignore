@@ -475,3 +475,14 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+/.vs/life_designer/v17/.suo
+/life_designer/bin/Debug/net6.0-windows/life_designer.dll
+/life_designer/bin/Debug/net6.0-windows/life_designer.pdb
+/life_designer/obj/Debug/net6.0-windows/ref/life_designer.dll
+/life_designer/obj/Debug/net6.0-windows/refint/life_designer.dll
+/life_designer/obj/Debug/net6.0-windows/life_designer.csproj.CoreCompileInputs.cache
+/life_designer/obj/Debug/net6.0-windows/life_designer.g.resources
+/life_designer/obj/Debug/net6.0-windows/life_designer.pdb
+/life_designer/obj/Debug/net6.0-windows/life_designer_MarkupCompile.i.cache
+/life_designer/obj/Debug/net6.0-windows/life_designer_MarkupCompile.cache
+/life_designer/obj/Debug/net6.0-windows/life_designer.dll
