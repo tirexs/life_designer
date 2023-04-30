@@ -1,6 +1,4 @@
-﻿using life_designer.ViewModel;
-using System.Collections.ObjectModel;
-using System.Windows;
+﻿using System.Windows;
 
 namespace life_designer.View
 {
@@ -9,7 +7,7 @@ namespace life_designer.View
     /// </summary>
     public partial class Add_category : Window
     {
-        private ObservableCollection<MainWindowViewModel.Item> items;
+        
 
         public Add_category()
         {
@@ -17,9 +15,5 @@ namespace life_designer.View
             
         }
 
-        public Add_category(ObservableCollection<MainWindowViewModel.Item> items)
-        {
-            this.items = items;
-        }
     }
 }
