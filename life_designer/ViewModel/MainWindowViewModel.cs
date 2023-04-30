@@ -60,6 +60,8 @@ namespace life_designer.ViewModel
         private void AddCategory(object parameter)
         {
             Add_category AD = new Add_category();
+            Add_categoryViewModel acvm = new Add_categoryViewModel(Items);
+            
             AD.Show();
         }
 

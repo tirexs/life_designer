@@ -590,3 +590,10 @@ obj/
 # Additional files built by Visual Studio
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,csharp,dotnetcore
+/.vs/life_designer/DesignTimeBuild/.dtbcache.v2
+/.vs/life_designer/v17/.suo
+/.vs/life_designer/v17/.futdcache.v2
+/.vs/ProjectEvaluation/life_designer.metadata.v6.1
+/.vs/ProjectEvaluation/life_designer.projects.v6.1
+/life_designer/obj/Debug/net6.0-windows/life_designer_MarkupCompile.cache
+/life_designer/obj/Debug/net6.0-windows/life_designer_MarkupCompile.lref
