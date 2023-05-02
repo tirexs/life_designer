@@ -40,7 +40,7 @@ namespace life_designer.ViewModel
                 var category = context.Categorys.Where(c => c.Name == Text).ExecuteDelete();
                 foreach (var coll in ItemsCollection.Items)
                 {
-                    if (coll.Name == Text)
+                    if (coll.Header == Text)
                     {
                         ItemsCollection.Items.Remove(coll);
                         break;

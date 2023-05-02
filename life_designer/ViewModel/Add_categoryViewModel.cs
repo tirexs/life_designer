@@ -41,7 +41,7 @@ namespace life_designer.ViewModel
 
                 context.Categorys.Add(category);
                 context.SaveChanges();
-                ItemsCollection.Items.Add(new Item { Name = Text, Content = new List<string>() });
+                ItemsCollection.Items.Add(new Item { Header = Text, Content = new List<string>() });
                 CloseWindowCommand.Execute(null);
             }
         }

@@ -3,6 +3,7 @@ using life_designer.Model;
 using life_designer.View;
 using System.Linq;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace life_designer.ViewModel
@@ -33,10 +34,20 @@ namespace life_designer.ViewModel
 
         private void AddTask(object parameter)
         {
+            //нужно добавить задачу, где категория задачаи равна SelectedItem.name
+            //что нужно:
+            //получить имя вкладки через SelectedItem
+            //найти id в базе данных выбранной категории
+            //добавить в базу данных задачу, где idcategory = найденному id
+            //обновить ItemsCollection.Items
             using (var context = new DataBaseContext())
             {
-
-                
+                //TabItem v = ItemsCollection.SelectedItem as TabItem;
+                if (ItemsCollection.SelectedItem != null)
+                {
+                    var b = ItemsCollection.SelectedItem.Header.ToString();
+                    
+                }
             }
         }
 

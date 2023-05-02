@@ -34,7 +34,7 @@ namespace life_designer.ViewModel
                 {
                     var id = context.Categorys.Where(n => n.Name == Cname).Select(n => n.Id);
                     var contents = context.datas.Include(t => t.Category).Where(t => t.IdCategory == id.First()).Select(x => x.Text).ToList();
-                    ItemsCollection.Items.Add(new Item{Name = Cname, Content = contents});
+                    ItemsCollection.Items.Add(new Item{ Header = Cname, Content = contents});
                 }
             }
         }
