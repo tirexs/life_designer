@@ -151,3 +151,7 @@ D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\refint\li
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer.pdb
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\life_designer.genruntimeconfig.cache
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\ref\life_designer.dll
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Add_task.g.cs
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Add_task.baml
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Del_task.g.cs
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Del_task.baml

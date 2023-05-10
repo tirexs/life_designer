@@ -2,11 +2,8 @@
 using life_designer.Model;
 using life_designer.View;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace life_designer.ViewModel
 {
@@ -16,43 +13,46 @@ namespace life_designer.ViewModel
 
         public MainWindowViewModel() 
         {
-            
-            Items = new ObservableCollection<Item>();
-            СollectionInitialization(Items);
+            СollectionInitialization();
             RemoveCategoryCommand = new RelayCommand(RemoveCategory);
             AddCategoryCommand = new RelayCommand(AddCategory);
-
+            AddTaskCommand = new RelayCommand(AddTask);
+            DelTaskCommand = new RelayCommand(DelTask);
         }
 
-        private ObservableCollection<Item> _items;
-        public ObservableCollection<Item> Items
+        private Item selectedItems;
+        public Item SelectedItems
         {
-            get { return _items; }
+            get { return selectedItems; }
             set
             {
-                _items = value;
-                OnPropertyChanged("Items");
+                selectedItems = value;
+                TabControl_SelectionChanged();
+                OnPropertyChanged("SelectedItems");
             }
         }
 
-        public sealed class Item
+        void TabControl_SelectionChanged()
         {
-            public string Header { get; set; }
-            public List<string> Content { get; set; }
+            ItemsCollection.SelectedItem = SelectedItems;
         }
 
-        public void СollectionInitialization(ObservableCollection<Item> Items)
+       
+
+
+
+        public void СollectionInitialization()
         {
             using (var context = new DataBaseContext())
             {
-                Items.Clear();
+                ItemsCollection.Items.Clear();
                 var category = context.Categorys.Select(n => n.Name).ToList();
 
                 foreach (var Cname in category)
                 {
                     var id = context.Categorys.Where(n => n.Name == Cname).Select(n => n.Id);
                     var contents = context.datas.Include(t => t.Category).Where(t => t.IdCategory == id.First()).Select(x => x.Text).ToList();
-                    Items.Add(new Item { Header = Cname, Content = contents });
+                    ItemsCollection.Items.Add(new Item{ Header = Cname, Content = contents});
                 }
             }
         }
@@ -66,11 +66,8 @@ namespace life_designer.ViewModel
 
         private void AddCategory(object parameter)
         {
-            using (var context = new DataBaseContext())
-            {
-                Add_category AD = new Add_category();
-                AD.Show();
-            }
+            Add_category AC = new Add_category();
+            AC.Show();  
         }
 
 
@@ -78,18 +75,29 @@ namespace life_designer.ViewModel
 
         private void RemoveCategory(object parameter)
         {
-            using (var context = new DataBaseContext())
-            {
-                Del_category DC = new Del_category();
-                DC.Show();
-            }
+            Del_category DC = new Del_category();
+            DC.Show();
+        }
+
+        public ICommand AddTaskCommand { get; private set; }
+
+        private void AddTask(object parameter)
+        {
+            ItemsCollection.SelectedItem = SelectedItems;
+            Add_task AT = new Add_task();
+            AT.Show();
+        }
+
+        public ICommand DelTaskCommand { get; private set; }
+
+        private void DelTask(object parameter)
+        {
+            ItemsCollection.SelectedItem = SelectedItems;
+            Del_task DT = new Del_task();
+            DT.Show();
         }
 
 
 
-
-
-
-        
     }
 }

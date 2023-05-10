@@ -1,6 +1,7 @@
 ﻿using life_designer.Infrastructure;
 using life_designer.Model;
 using life_designer.View;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -40,7 +41,7 @@ namespace life_designer.ViewModel
 
                 context.Categorys.Add(category);
                 context.SaveChanges();
-                OnPropertyChanged("Items");
+                ItemsCollection.Items.Add(new Item { Header = Text, Content = new List<string>() });
                 CloseWindowCommand.Execute(null);
             }
         }

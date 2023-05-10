@@ -20,5 +20,7 @@ namespace life_designer.Model
         public DbSet<Category> Categorys { get; set; }
         public DbSet<Data> datas { get; set; }
 
+        
+
     }
 }
