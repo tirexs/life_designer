@@ -22,7 +22,7 @@
                     <Button x:Name="add_category" Content="добавление категории" Command="{Binding AddCategoryCommand}" Width="142"/>
                     <Button x:Name="del_category" Content="удаление категории" Command="{Binding RemoveCategoryCommand}" Width="142"/>
                     <Button x:Name="add_element" Content="добавление элемента" Command="{Binding AddTaskCommand}" Width="142"/>
-                    <Button x:Name="del_element" Content="удаление элемента" Width="142"/>
+                    <Button x:Name="del_element" Content="удаление элемента" Command="{Binding DelTaskCommand}" Width="142"/>
                 </StackPanel>
             </Grid>
         </Border>
@@ -30,7 +30,7 @@
 
             <Grid Width="1600" Height="951" RenderTransformOrigin="0.465,0.504" Margin="-1,-1,-1,-1">
 
-                <TabControl TabStripPlacement="Left" ItemsSource="{Binding Source={x:Static vx:ItemsCollection.Items}}" SelectedItem="{Binding Source={x:Static vx:ItemsCollection.SelectedItem}, Mode=OneWay}">
+                <TabControl TabStripPlacement="Left" ItemsSource="{Binding Source={x:Static vx:ItemsCollection.Items}}" SelectedItem="{Binding SelectedItems, Mode=TwoWay}" SelectionChanged="TabControl_SelectionChanged">
 
                     <TabControl.ItemTemplate>
                         <!-- this is the header template-->

@@ -3,7 +3,6 @@ using life_designer.Model;
 using life_designer.View;
 using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace life_designer.ViewModel
@@ -18,6 +17,7 @@ namespace life_designer.ViewModel
             AddTaskCommand = new RelayCommand(AddTask);
         }
 
+        
 
         private string text;
         public string Text
@@ -40,14 +40,26 @@ namespace life_designer.ViewModel
             //найти id в базе данных выбранной категории
             //добавить в базу данных задачу, где idcategory = найденному id
             //обновить ItemsCollection.Items
+
+
+
             using (var context = new DataBaseContext())
             {
-                //TabItem v = ItemsCollection.SelectedItem as TabItem;
-                if (ItemsCollection.SelectedItem != null)
+                var id = context.Categorys.Where(n => n.Name == ItemsCollection.SelectedItem.Header).Select(n => n.Id).FirstOrDefault();
+                var data = new Data()
                 {
-                    var b = ItemsCollection.SelectedItem.Header.ToString();
-                    
+                    Text = Text,
+                    IdCategory = id
+                };
+                context.datas.Add(data);
+                context.SaveChanges();
+
+                var item = ItemsCollection.Items.FirstOrDefault(i => i.Header == ItemsCollection.SelectedItem.Header);
+                if (item != null)
+                {
+                    item.Content.Add(Text);
                 }
+                CloseWindowCommand.Execute(null);
             }
         }
 

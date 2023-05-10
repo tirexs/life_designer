@@ -17,10 +17,28 @@ namespace life_designer.ViewModel
             RemoveCategoryCommand = new RelayCommand(RemoveCategory);
             AddCategoryCommand = new RelayCommand(AddCategory);
             AddTaskCommand = new RelayCommand(AddTask);
-
+            DelTaskCommand = new RelayCommand(DelTask);
         }
 
-        
+        private Item selectedItems;
+        public Item SelectedItems
+        {
+            get { return selectedItems; }
+            set
+            {
+                selectedItems = value;
+                TabControl_SelectionChanged();
+                OnPropertyChanged("SelectedItems");
+            }
+        }
+
+        void TabControl_SelectionChanged()
+        {
+            ItemsCollection.SelectedItem = SelectedItems;
+        }
+
+       
+
 
 
         public void СollectionInitialization()
@@ -65,11 +83,19 @@ namespace life_designer.ViewModel
 
         private void AddTask(object parameter)
         {
+            ItemsCollection.SelectedItem = SelectedItems;
             Add_task AT = new Add_task();
             AT.Show();
         }
 
+        public ICommand DelTaskCommand { get; private set; }
 
+        private void DelTask(object parameter)
+        {
+            ItemsCollection.SelectedItem = SelectedItems;
+            Del_task DT = new Del_task();
+            DT.Show();
+        }
 
 
 

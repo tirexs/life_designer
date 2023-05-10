@@ -8,13 +8,14 @@ using System.Windows.Input;
 
 namespace life_designer.ViewModel
 {
-    public class Del_categoryViewModel : ViewModelBase
+    public class Del_taskViewModel: ViewModelBase
     {
 
-        public Del_categoryViewModel() 
+
+        public Del_taskViewModel() 
         {
             CloseWindowCommand = new RelayCommand(CloseWindow);
-            RemoveCategoryCommand = new RelayCommand(RemoveCategory);
+            DelTaskCommand = new RelayCommand(DelTask);
         }
 
         private string text;
@@ -28,21 +29,18 @@ namespace life_designer.ViewModel
             }
         }
 
-        public ICommand RemoveCategoryCommand { get; private set; }
+        public ICommand DelTaskCommand { get; private set; }
 
- 
-        private void RemoveCategory(object parameter)
+        private void DelTask(object parameter)
         {
             using (var context = new DataBaseContext())
             {
-                var category = context.Categorys.Where(c => c.Name == Text).ExecuteDelete();
-                foreach (var coll in ItemsCollection.Items)
+                var data = context.datas.Where(c => c.Text == Text).ExecuteDelete();
+
+                var item = ItemsCollection.Items.FirstOrDefault(i => i.Header == ItemsCollection.SelectedItem.Header);
+                if (item != null)
                 {
-                    if (coll.Header == Text)
-                    {
-                        ItemsCollection.Items.Remove(coll);
-                        break;
-                    }
+                    item.Content.Remove(Text);
                 }
                 CloseWindowCommand.Execute(null);
             }
@@ -52,9 +50,9 @@ namespace life_designer.ViewModel
 
         private void CloseWindow(object parameter)
         {
-
-            Application.Current.Windows.OfType<Del_category>().FirstOrDefault()?.Close();
+            Application.Current.Windows.OfType<Del_task>().FirstOrDefault()?.Close();
         }
+
+
     }
 }
-
