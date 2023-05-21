@@ -30,13 +30,18 @@
 
             <Grid Width="1600" Height="951" RenderTransformOrigin="0.465,0.504" Margin="-1,-1,-1,-1">
 
-                <TabControl TabStripPlacement="Left" ItemsSource="{Binding Source={x:Static vx:ItemsCollection.Items}}" SelectedItem="{Binding SelectedItems, Mode=TwoWay}" SelectionChanged="TabControl_SelectionChanged">
+                <TabControl TabStripPlacement="Left" ItemsSource="{Binding Source={x:Static vx:ItemsCollection.Items}}" SelectedItem="{Binding SelectedItems, Mode=TwoWay}" >
 
                     <TabControl.ItemTemplate>
                         <!-- this is the header template-->
                         <DataTemplate>
-                            <TextBlock
-                    Text="{Binding Header}" />
+                            <TextBlock Text="{Binding Header}">
+                                <!--<TextBlock.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Удалить" Command="{Binding MenuItem_DelCat}"/>
+                                    </ContextMenu>
+                                </TextBlock.ContextMenu>-->
+                            </TextBlock>
                         </DataTemplate>
                     </TabControl.ItemTemplate>
 

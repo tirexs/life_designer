@@ -4,6 +4,7 @@ using life_designer.View;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Windows;
 using System.Windows.Input;
 
 namespace life_designer.ViewModel
@@ -99,6 +100,22 @@ namespace life_designer.ViewModel
         }
 
 
+        //в разработке
+        //public void MenuItem_DelCat()
+        //{
+        //    using (var context = new DataBaseContext())
+        //    {
+        //        var category = context.Categorys.Where(c => c.Name == ItemsCollection.SelectedItem.Header).ExecuteDelete();
+        //        foreach (var coll in ItemsCollection.Items)
+        //        {
+        //            if (coll.Header == ItemsCollection.SelectedItem.Header)
+        //            {
+        //                ItemsCollection.Items.Remove(coll);
+        //                break;
+        //            }
+        //        }
+        //    }
+        //}
 
     }
 }

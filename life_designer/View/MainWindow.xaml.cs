@@ -12,17 +12,8 @@ namespace life_designer.View
         public MainWindow()
         {
             InitializeComponent();            
-        }
-
-        private void TabControl_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
-        {
-
-        }
+        }   
     }
-
-
-
-
 }
 
 
