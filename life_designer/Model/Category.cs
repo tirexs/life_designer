@@ -11,8 +11,11 @@ namespace life_designer.Model
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
+        public int IdUser { get; set; }
         public string Name { get; set; }
-        public List<Data> Datas { get; set;}
 
+        [ForeignKey("IdUser")]
+        public UserLogin UserLogin { get; set; }
+        public List<Data> Datas { get; set; }
     }
 }

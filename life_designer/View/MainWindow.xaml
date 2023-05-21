@@ -18,6 +18,7 @@
     <Grid>
         <Border x:Name="bu" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="57" VerticalAlignment="Top" Width="1600">
             <Grid Width="1600" Height="57" Margin="-1,-1,-1,-1">
+                <Button Margin="1511,0,0,0" Content="Login" Command="{Binding LoginCommand}"/>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="add_category" Content="добавление категории" Command="{Binding AddCategoryCommand}" Width="142"/>
                     <Button x:Name="del_category" Content="удаление категории" Command="{Binding RemoveCategoryCommand}" Width="142"/>
@@ -118,7 +119,7 @@
                     </TabControl.Resources>
 
 
-                    
+
 
                 </TabControl>
 

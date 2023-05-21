@@ -4,7 +4,6 @@ using life_designer.View;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Windows;
 using System.Windows.Input;
 
 namespace life_designer.ViewModel
@@ -20,6 +19,7 @@ namespace life_designer.ViewModel
             AddCategoryCommand = new RelayCommand(AddCategory);
             AddTaskCommand = new RelayCommand(AddTask);
             DelTaskCommand = new RelayCommand(DelTask);
+            LoginCommand = new RelayCommand(Login);
         }
 
         private Item selectedItems;
@@ -62,7 +62,13 @@ namespace life_designer.ViewModel
 
 
 
+        public ICommand LoginCommand { get; private set; }
 
+        private void Login(object parameter)
+        {
+            Login login = new Login();
+            login.Show();
+        }
 
         public ICommand AddCategoryCommand { get; private set; }
 

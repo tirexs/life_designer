@@ -157,3 +157,7 @@ D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Del_
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Del_task.baml
 D:\programming\C#\life_designer\life_designer\bin\Debug\net6.0-windows\Npgsql.dll
 D:\programming\C#\life_designer\life_designer\bin\Debug\net6.0-windows\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Login.g.cs
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Login.baml
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Register.g.cs
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Register.baml

@@ -13,6 +13,12 @@
     <Compile Update="View\Del_task.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\Login.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\Register.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="View\Add_task.xaml">
@@ -21,7 +27,13 @@
     <Page Update="View\Del_task.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\Login.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\Register.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
