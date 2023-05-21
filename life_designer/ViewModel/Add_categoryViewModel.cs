@@ -2,6 +2,7 @@
 using life_designer.Model;
 using life_designer.View;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -41,7 +42,7 @@ namespace life_designer.ViewModel
 
                 context.Categorys.Add(category);
                 context.SaveChanges();
-                ItemsCollection.Items.Add(new Item { Header = Text, Content = new List<string>() });
+                ItemsCollection.Items.Add(new Item { Header = Text, Content = new ObservableCollection<string>() });
                 CloseWindowCommand.Execute(null);
             }
         }

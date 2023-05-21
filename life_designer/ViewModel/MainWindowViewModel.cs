@@ -2,6 +2,7 @@
 using life_designer.Model;
 using life_designer.View;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
 
@@ -52,7 +53,7 @@ namespace life_designer.ViewModel
                 {
                     var id = context.Categorys.Where(n => n.Name == Cname).Select(n => n.Id);
                     var contents = context.datas.Include(t => t.Category).Where(t => t.IdCategory == id.First()).Select(x => x.Text).ToList();
-                    ItemsCollection.Items.Add(new Item{ Header = Cname, Content = contents});
+                    ItemsCollection.Items.Add(new Item{ Header = Cname, Content = new ObservableCollection<string>(contents)});
                 }
             }
         }

@@ -14,7 +14,7 @@ namespace life_designer.Model
     public class Item
     {
         public string Header { get; set; }
-        public List<string> Content { get; set; }
+        public ObservableCollection<string> Content { get; set; }
 
     }
 }
