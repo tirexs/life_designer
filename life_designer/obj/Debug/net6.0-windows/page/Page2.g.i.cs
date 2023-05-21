@@ -53,7 +53,7 @@ namespace life_designer.page {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/life_designer;component/page/page2.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/life_designer;V1.0.0.0;component/page/page2.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\page\Page2.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

@@ -489,7 +489,9 @@ $RECYCLE.BIN/
 /.vs/life_designer/DesignTimeBuild/.dtbcache.v2
 /life_designer/obj/Debug/net6.0-windows/life_designer.assets.cache
 /life_designer/obj/Debug/net6.0-windows/life_designer.designer.runtimeconfig.json
-/life_designer/obj/life_designer.csproj.nuget.g.props
 /life_designer/obj/life_designer.csproj.nuget.dgspec.json
+/life_designer/obj/life_designer.csproj.nuget.g.props
 /life_designer/obj/project.assets.json
 /life_designer/obj/project.nuget.cache
+/.vs/life_designer/FileContentIndex/81d75a45-175d-4f8f-a1c2-3ab2073612d8.vsidx
+/.vs/life_designer/v17/.suo
