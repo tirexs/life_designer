@@ -13,7 +13,8 @@
     ],
     "additionalProbingPaths": [
       "C:\\Users\\sarbu\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\sarbu\\.nuget\\packages"
+      "C:\\Users\\sarbu\\.nuget\\packages",
+      "C:\\Program Files (x86)\\Progress\\ToolboxNuGetPackages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true

@@ -12,7 +12,7 @@ namespace life_designer.Model
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(ConfigurationManager.ConnectionStrings["DataBaseConnectionString"].ConnectionString);
+            optionsBuilder.UseNpgsql(ConfigurationManager.ConnectionStrings["DataBaseConnectionString"].ConnectionString);
         }
 
 

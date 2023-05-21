@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
@@ -7,11 +8,11 @@ namespace life_designer.Model
     [Table("Category")]
     public class Category
     {
-        [Column("Id")]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Column("Name")]
         public string Name { get; set; }
-        public virtual ICollection<Data> Datas { get; set;}
+        public List<Data> Datas { get; set;}
 
     }
 }
