@@ -1,8 +1,6 @@
 ﻿using life_designer.Infrastructure;
 using life_designer.Model;
-using System.Collections.ObjectModel;
 using System.Windows.Input;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace life_designer.ViewModel
 {

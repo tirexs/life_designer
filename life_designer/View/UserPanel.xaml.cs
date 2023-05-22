@@ -3,11 +3,11 @@
 namespace life_designer.View
 {
     /// <summary>
-    /// Логика взаимодействия для Register.xaml
+    /// Логика взаимодействия для UserPanel.xaml
     /// </summary>
-    public partial class Register : Page
+    public partial class UserPanel : Page
     {
-        public Register()
+        public UserPanel()
         {
             InitializeComponent();
         }

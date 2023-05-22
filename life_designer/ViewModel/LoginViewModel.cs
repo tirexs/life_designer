@@ -1,10 +1,4 @@
 ﻿using life_designer.Infrastructure;
-using life_designer.View;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace life_designer.ViewModel
@@ -53,8 +47,7 @@ namespace life_designer.ViewModel
 
         private void Register(object parameter)
         {
-            Register register = new Register();
-            register.Show();
+            
         }
     }
 }

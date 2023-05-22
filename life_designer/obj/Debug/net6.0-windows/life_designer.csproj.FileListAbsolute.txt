@@ -161,3 +161,7 @@ D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Logi
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Login.baml
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Register.g.cs
 D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Register.baml
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Account.g.cs
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\UserPanel.g.cs
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\Account.baml
+D:\programming\C#\life_designer\life_designer\obj\Debug\net6.0-windows\View\UserPanel.baml

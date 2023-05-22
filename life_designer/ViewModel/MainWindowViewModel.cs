@@ -19,7 +19,7 @@ namespace life_designer.ViewModel
             AddCategoryCommand = new RelayCommand(AddCategory);
             AddTaskCommand = new RelayCommand(AddTask);
             DelTaskCommand = new RelayCommand(DelTask);
-            LoginCommand = new RelayCommand(Login);
+            AccountCommand = new RelayCommand(Account);
         }
 
         private Item selectedItems;
@@ -62,12 +62,12 @@ namespace life_designer.ViewModel
 
 
 
-        public ICommand LoginCommand { get; private set; }
+        public ICommand AccountCommand { get; private set; }
 
-        private void Login(object parameter)
+        private void Account(object parameter)
         {
-            Login login = new Login();
-            login.Show();
+            Account account = new Account();
+            account.Show();
         }
 
         public ICommand AddCategoryCommand { get; private set; }
