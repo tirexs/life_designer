@@ -5,7 +5,7 @@ namespace life_designer.View
     /// <summary>
     /// Логика взаимодействия для UserPanel.xaml
     /// </summary>
-    public partial class UserPanel : Page
+    public partial class UserPanel : UserControl
     {
         public UserPanel()
         {

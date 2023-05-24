@@ -1,4 +1,6 @@
-﻿using life_designer.View;
+﻿using life_designer.Stores;
+using life_designer.View;
+using System;
 using System.Windows.Controls;
 
 namespace life_designer.ViewModel
@@ -6,23 +8,19 @@ namespace life_designer.ViewModel
     public class AccountViewModel : ViewModelBase
     {
 
-        public AccountViewModel()
+        public AccountViewModel(NavigationStore navigationStore)
         {
-            CurrentPage = new Login();
+            _navigationStore = navigationStore;
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
         }
 
-        private Page currentPage;
-        public Page CurrentPage
-        {
-            get { return currentPage; }
-            set
-            {
-                currentPage = value;
-                OnPropertyChanged("CurrentPage");
-            }
-        }
+        private readonly NavigationStore _navigationStore;
+        public ViewModelBase CurrentViewModel => _navigationStore.CurrentViewModel;
 
-        
+        private void OnCurrentViewModelChanged()
+        {
+            OnPropertyChanged("CurrentViewModel");
+        }
 
     }
 }

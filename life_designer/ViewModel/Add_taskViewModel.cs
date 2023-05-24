@@ -1,4 +1,4 @@
-﻿using life_designer.Infrastructure;
+﻿using life_designer.Commands;
 using life_designer.Model;
 using life_designer.View;
 using System.Linq;
@@ -49,7 +49,8 @@ namespace life_designer.ViewModel
                 var data = new Data()
                 {
                     Text = Text,
-                    IdCategory = id
+                    IdCategory = id,
+                    IdUser = ItemsCollection.IdUser
                 };
                 context.datas.Add(data);
                 context.SaveChanges();

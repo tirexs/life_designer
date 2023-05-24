@@ -1,5 +1,7 @@
-﻿using life_designer.Infrastructure;
+﻿using life_designer.Commands;
+using life_designer.Infrastructure;
 using life_designer.Model;
+using life_designer.Stores;
 using System.Windows.Input;
 
 namespace life_designer.ViewModel
@@ -7,12 +9,13 @@ namespace life_designer.ViewModel
     public class RegisterViewModel : ViewModelBase
     {
 
-        public RegisterViewModel() 
+        public RegisterViewModel(NavigationStore navigationStore) 
         {
             RegisterCommand = new RelayCommand(Register);
-
+            NavigateLoginCommand = new NavigateCommand<LoginViewModel>(navigationStore, ()=> new LoginViewModel(navigationStore));
 
         }
+        public RegisterViewModel(){}
 
         private string emailText;
         public string EmailText
@@ -46,8 +49,8 @@ namespace life_designer.ViewModel
                 OnPropertyChanged("PassText");
             }
         }
-       
 
+        public ICommand NavigateLoginCommand { get; }
         public ICommand RegisterCommand { get; private set; }
 
         private void Register(object parameter)
@@ -64,7 +67,7 @@ namespace life_designer.ViewModel
 
                 context.userLogins.Add(userLogin);
                 context.SaveChanges();
-                
+                NavigateLoginCommand.Execute(null);
             }
         }
     }

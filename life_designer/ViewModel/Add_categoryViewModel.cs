@@ -1,7 +1,6 @@
-﻿using life_designer.Infrastructure;
+﻿using life_designer.Commands;
 using life_designer.Model;
 using life_designer.View;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
@@ -37,7 +36,8 @@ namespace life_designer.ViewModel
 
                 var category = new Category()
                 {
-                    Name = Text
+                    Name = Text,
+                    IdUser = ItemsCollection.IdUser
                 };
 
                 context.Categorys.Add(category);

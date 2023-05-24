@@ -1,5 +1,6 @@
-﻿using life_designer.Infrastructure;
+﻿using life_designer.Commands;
 using life_designer.Model;
+using life_designer.Stores;
 using life_designer.View;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.ObjectModel;
@@ -14,14 +15,16 @@ namespace life_designer.ViewModel
 
         public MainWindowViewModel() 
         {
-            СollectionInitialization();
+            //СollectionInitialization();
             RemoveCategoryCommand = new RelayCommand(RemoveCategory);
             AddCategoryCommand = new RelayCommand(AddCategory);
             AddTaskCommand = new RelayCommand(AddTask);
             DelTaskCommand = new RelayCommand(DelTask);
             AccountCommand = new RelayCommand(Account);
+            navigationStore.CurrentViewModel = new LoginViewModel(navigationStore);
         }
 
+        NavigationStore navigationStore = new NavigationStore();
         private Item selectedItems;
         public Item SelectedItems
         {
@@ -66,7 +69,7 @@ namespace life_designer.ViewModel
 
         private void Account(object parameter)
         {
-            Account account = new Account();
+            Account account = new Account() { DataContext = new AccountViewModel(navigationStore)};
             account.Show();
         }
 

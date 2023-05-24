@@ -8,9 +8,24 @@
         mc:Ignorable="d"
         Title="Account" Height="450" Width="800">
 
-    <Window.DataContext>
-        <vm:AccountViewModel/>
-    </Window.DataContext>
 
-    <Frame Background="White" NavigationUIVisibility="Hidden" Content="{Binding CurrentPage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+    
+    <Grid>
+        <ContentControl Content="{Binding CurrentViewModel}"/>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vm:RegisterViewModel}">
+                <local:Register/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:LoginViewModel}">
+                <local:Login/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:UserPanelViewModel}">
+                <local:UserPanel/>
+            </DataTemplate>
+        </Grid.Resources>
+    </Grid>
+
+
+
+
 </Window>

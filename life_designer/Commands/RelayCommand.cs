@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Input;
 
-namespace life_designer.Infrastructure
+namespace life_designer.Commands
 {
     public class RelayCommand : ICommand
     {

@@ -1,4 +1,4 @@
-﻿using life_designer.Infrastructure;
+﻿using life_designer.Commands;
 using life_designer.Model;
 using life_designer.View;
 using Microsoft.EntityFrameworkCore;

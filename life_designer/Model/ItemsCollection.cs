@@ -7,6 +7,7 @@ namespace life_designer.Model
     {
         public static ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item> ();
         public static Item SelectedItem { get; set; }
+        public static int IdUser { get; set; }
     }
 
 

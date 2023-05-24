@@ -19,9 +19,9 @@ namespace life_designer.ViewModel
             }
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
-            throw new NotImplementedException();
+            
         }
 
 
