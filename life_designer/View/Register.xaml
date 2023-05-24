@@ -10,12 +10,17 @@
     
     <Grid Background="White">
         
-        <TextBox HorizontalAlignment="Left" Text="{Binding EmailText}" Margin="230,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding LoginText}" Margin="230,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding PassText}" Margin="230,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding EmailText, Mode=TwoWay}" Margin="230,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding LoginText, Mode=TwoWay}" Margin="230,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding PassText, Mode=TwoWay}" Margin="230,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBlock HorizontalAlignment="Left" Margin="130,123,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="102,60,0,0" TextWrapping="Wrap" Text="{Binding ErrText}" VerticalAlignment="Top" Foreground="Red"/>
         <TextBlock HorizontalAlignment="Left" Margin="130,150,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top"/>
         <TextBlock HorizontalAlignment="Left" Margin="130,85,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
-        <Button Content="Регистрация" Command="{Binding RegisterCommand}" HorizontalAlignment="Left" Margin="167,217,0,0" VerticalAlignment="Top" Height="32" Width="85"/>
+        <TextBlock HorizontalAlignment="Left" Margin="392,88,0,0" TextWrapping="Wrap" Text="{Binding ErrNulllText}" VerticalAlignment="Top" Foreground="#FFFF0202"/>
+        <TextBlock HorizontalAlignment="Left" Margin="392,120,0,0" TextWrapping="Wrap" Text="{Binding ErrNullText}" VerticalAlignment="Top" Foreground="#FFFF0202"/>
+        <TextBlock HorizontalAlignment="Left" Margin="392,163,0,0" TextWrapping="Wrap" Text="{Binding ErrNulText}" VerticalAlignment="Top" Foreground="#FFFF0202"/>
+        <Button Content="Регистрация" Command="{Binding RegisterCommand}" HorizontalAlignment="Left" Margin="266,217,0,0" VerticalAlignment="Top" Height="32" Width="85"/>
+        <Button Content="Отмена" Command="{Binding NavigateLoginCommand}" HorizontalAlignment="Left" Margin="129,217,0,0" VerticalAlignment="Top" Height="32" Width="85"/>
     </Grid>
 </UserControl>

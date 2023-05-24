@@ -2,6 +2,7 @@
 using life_designer.Infrastructure;
 using life_designer.Model;
 using life_designer.Stores;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Linq;
 using System.Windows.Input;
 
@@ -19,14 +20,14 @@ namespace life_designer.ViewModel
         }
         public LoginViewModel(){}
 
-        private string loginText;
-        public string LoginText
+        private string emailText;
+        public string EmailText
         {
-            get { return loginText; }
+            get { return emailText; }
             set
             {
-                loginText = value;
-                OnPropertyChanged("LoginText");
+                emailText = value;
+                OnPropertyChanged("EmailText");
             }
         }
 
@@ -41,6 +42,39 @@ namespace life_designer.ViewModel
             }
         }
 
+        private string errText;
+        public string ErrText
+        {
+            get { return errText; }
+            set
+            {
+                errText = value;
+                OnPropertyChanged("ErrText");
+            }
+        }
+
+        private string errNullText;
+        public string ErrNullText
+        {
+            get { return errNullText; }
+            set
+            {
+                errNullText = value;
+                OnPropertyChanged("ErrNullText");
+            }
+        }
+
+        private string errNulText;
+        public string ErrNulText
+        {
+            get { return errNulText; }
+            set
+            {
+                errNulText = value;
+                OnPropertyChanged("ErrNulText");
+            }
+        }
+
         public ICommand CICommand { get; }
 
         public ICommand NavigateRegisterCommand { get; }
@@ -51,19 +85,32 @@ namespace life_designer.ViewModel
 
         private void Login(object parameter)
         {
-            using (var context = new DataBaseContext())
+            if (PassText == null || EmailText == null)
             {
-                var CurrentUser = context.userLogins.FirstOrDefault(u => u.UserName == LoginText && u.Password  == MD5Hash.hashPassword(PassText));
-                if(CurrentUser != null)
+                if (EmailText == null)
+                    ErrNullText = "Обязательно для заполнения";
+                if (PassText == null)
+                    ErrNulText = "Обязательно для заполнения";
+            }
+            else
+            {
+                using (var context = new DataBaseContext())
                 {
-                    ItemsCollection.IdUser = CurrentUser.Id;
-                    CICommand.Execute(null);
-                    NavigateUserPanelCommand.Execute(null);
+                    var CurrentUser = context.userLogins.FirstOrDefault(u => u.Email == EmailText && u.Password == MD5Hash.hashPassword(PassText));
+                    if (CurrentUser != null)
+                    {
+                        ItemsCollection.IdUser = CurrentUser.Id;
+                        CICommand.Execute(null);
+                        NavigateUserPanelCommand.Execute(null);
+                    }
+                    else
+                    {
+                        ErrText = "Неверный логин или пароль";
+                        EmailText = "";
+                        PassText = "";
+                    }
                 }
             }
         }
-
-        
-
     }
 }

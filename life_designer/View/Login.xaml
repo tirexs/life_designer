@@ -7,12 +7,15 @@
              xmlns:ViewModel="clr-namespace:life_designer.ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    
+
     <Grid Background="White">
-        
-        <TextBox HorizontalAlignment="Left" Text="{Binding LoginText}" Margin="250,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox HorizontalAlignment="Left" Text="{Binding PassText}" Margin="250,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBlock HorizontalAlignment="Left" Margin="148,88,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top"/>
+
+        <TextBox HorizontalAlignment="Left" Text="{Binding EmailText, Mode=TwoWay}" Margin="250,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Text="{Binding PassText, Mode=TwoWay}" Margin="250,119,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="148,88,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="171,61,0,0" TextWrapping="Wrap" Text="{Binding ErrText}" VerticalAlignment="Top" Foreground="#FFFF0202"/>
+        <TextBlock HorizontalAlignment="Left" Margin="392,88,0,0" TextWrapping="Wrap" Text="{Binding ErrNullText}" VerticalAlignment="Top" Foreground="#FFFF0202"/>
+        <TextBlock HorizontalAlignment="Left" Margin="392,120,0,0" TextWrapping="Wrap" Text="{Binding ErrNulText}" VerticalAlignment="Top" Foreground="#FFFF0202"/>
         <TextBlock HorizontalAlignment="Left" Margin="148,114,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top"/>
         <Button Content="Регистрация" Command="{Binding NavigateRegisterCommand}" HorizontalAlignment="Left" Margin="165,183,0,0" VerticalAlignment="Top" Height="32" Width="85"/>
         <Button Content="Войти" Command="{Binding LoginCommand}" HorizontalAlignment="Left" Margin="278,183,0,0" VerticalAlignment="Top" Height="32" Width="59"/>
