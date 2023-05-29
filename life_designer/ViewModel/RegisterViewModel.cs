@@ -101,13 +101,13 @@ namespace life_designer.ViewModel
         private void Register(object parameter)
         {
 
-            if (LoginText == null || PassText == null || EmailText == null)
+            if (LoginText == null || PassText == null || EmailText == null || LoginText == "" || PassText == "" || EmailText == "")
             {
-                if (LoginText == null)
+                if (LoginText == null || LoginText == "")
                     ErrNullText = "Обязательно для заполнения";
-                if (EmailText == null)
+                if (EmailText == null || EmailText == "")
                     ErrNulllText = "Обязательно для заполнения";
-                if (PassText == null)
+                if (PassText == null || PassText == "")
                     ErrNulText = "Обязательно для заполнения";
             }
             else

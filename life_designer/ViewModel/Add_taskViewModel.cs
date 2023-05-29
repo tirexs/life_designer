@@ -30,37 +30,46 @@ namespace life_designer.ViewModel
             }
         }
 
+        private string errText;
+        public string ErrText
+        {
+            get { return errText; }
+            set
+            {
+                errText = value;
+                OnPropertyChanged("ErrText");
+            }
+        }
+
         public ICommand AddTaskCommand { get; private set; }
 
         private void AddTask(object parameter)
         {
-            //нужно добавить задачу, где категория задачаи равна SelectedItem.name
-            //что нужно:
-            //получить имя вкладки через SelectedItem
-            //найти id в базе данных выбранной категории
-            //добавить в базу данных задачу, где idcategory = найденному id
-            //обновить ItemsCollection.Items
-
-
-
-            using (var context = new DataBaseContext())
+            if (Text == null || Text == "")
             {
-                var id = context.Categorys.Where(n => n.Name == ItemsCollection.SelectedItem.Header).Select(n => n.Id).FirstOrDefault();
-                var data = new Data()
+                ErrText = "Обязательно для заполнения";
+            }
+            else
+            { 
+                using (var context = new DataBaseContext())
                 {
-                    Text = Text,
-                    IdCategory = id,
-                    IdUser = ItemsCollection.IdUser
-                };
-                context.datas.Add(data);
-                context.SaveChanges();
+                    var id = context.Categorys.Where(n => n.Name == ItemsCollection.SelectedItem.Header).Select(n => n.Id).FirstOrDefault();
+                    var data = new Data()
+                    {
+                        Text = Text,
+                        IdCategory = id,
+                        IdUser = ItemsCollection.IdUser
+                    };
+                    context.datas.Add(data);
+                    context.SaveChanges();
 
-                var item = ItemsCollection.Items.FirstOrDefault(i => i.Header == ItemsCollection.SelectedItem.Header);
-                if (item != null)
-                {
-                    item.Content.Add(Text);
+                    var item = ItemsCollection.Items.FirstOrDefault(i => i.Header == ItemsCollection.SelectedItem.Header);
+                    if (item != null)
+                    {
+                        item.Content.Add(Text);
+                    }
+                    CloseWindowCommand.Execute(null);
                 }
-                CloseWindowCommand.Execute(null);
             }
         }
 

@@ -85,11 +85,11 @@ namespace life_designer.ViewModel
 
         private void Login(object parameter)
         {
-            if (PassText == null || EmailText == null)
+            if (PassText == null || EmailText == null || PassText == "" || EmailText == "")
             {
-                if (EmailText == null)
+                if (EmailText == null || EmailText == "")
                     ErrNullText = "Обязательно для заполнения";
-                if (PassText == null)
+                if (PassText == null || PassText == "")
                     ErrNulText = "Обязательно для заполнения";
             }
             else

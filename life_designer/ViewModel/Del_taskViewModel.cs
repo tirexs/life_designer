@@ -29,20 +29,38 @@ namespace life_designer.ViewModel
             }
         }
 
+        private string errText;
+        public string ErrText
+        {
+            get { return errText; }
+            set
+            {
+                errText = value;
+                OnPropertyChanged("ErrText");
+            }
+        }
+
         public ICommand DelTaskCommand { get; private set; }
 
         private void DelTask(object parameter)
         {
-            using (var context = new DataBaseContext())
+            if (Text == null || Text == "")
             {
-                var data = context.datas.Where(c => c.Text == Text).ExecuteDelete();
-
-                var item = ItemsCollection.Items.FirstOrDefault(i => i.Header == ItemsCollection.SelectedItem.Header);
-                if (item != null)
+                ErrText = "Обязательно для заполнения";
+            }
+            else
+            {
+                using (var context = new DataBaseContext())
                 {
-                    item.Content.Remove(Text);
+                    var data = context.datas.Where(c => c.Text == Text).ExecuteDelete();
+
+                    var item = ItemsCollection.Items.FirstOrDefault(i => i.Header == ItemsCollection.SelectedItem.Header);
+                    if (item != null)
+                    {
+                        item.Content.Remove(Text);
+                    }
+                    CloseWindowCommand.Execute(null);
                 }
-                CloseWindowCommand.Execute(null);
             }
         }
 

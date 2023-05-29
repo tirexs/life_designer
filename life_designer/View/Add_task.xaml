@@ -15,6 +15,7 @@
         <TextBox x:Name="TextBox" Text="{Binding Text}" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Margin="100,100,0,0"/>
         <Button x:Name="Button_add" Command="{Binding AddTaskCommand}" Content="Добавить" HorizontalAlignment="Left" Margin="100,179,0,0" VerticalAlignment="Top"/>
         <Button x:Name="Button_cancle" Content="Отмена" Command="{Binding CloseWindowCommand}" IsDefault="True" HorizontalAlignment="Left" Margin="242,179,0,0" VerticalAlignment="Top"/>
+        <TextBlock x:Name="Text" Text="{Binding ErrText}" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Width="188" Margin="0,70,0,0" Foreground="#FFFF0F0F"/>
 
     </Grid>
 </Window>
