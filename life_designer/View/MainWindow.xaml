@@ -18,11 +18,12 @@
     <Grid>
         <Border x:Name="bu" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="57" VerticalAlignment="Top" Width="1600">
             <Grid Width="1600" Height="57" Margin="-1,-1,-1,-1">
+                <Button Margin="1511,0,0,0" Content="Account" Command="{Binding AccountCommand}"/>
                 <StackPanel Orientation="Horizontal">
                     <Button x:Name="add_category" Content="добавление категории" Command="{Binding AddCategoryCommand}" Width="142"/>
                     <Button x:Name="del_category" Content="удаление категории" Command="{Binding RemoveCategoryCommand}" Width="142"/>
-                    <Button x:Name="add_element" Content="добавление элемента" Width="142"/>
-                    <Button x:Name="del_element" Content="удаление элемента" Width="142"/>
+                    <Button x:Name="add_element" Content="добавление элемента" Command="{Binding AddTaskCommand}" Width="142"/>
+                    <Button x:Name="del_element" Content="удаление элемента" Command="{Binding DelTaskCommand}" Width="142"/>
                 </StackPanel>
             </Grid>
         </Border>
@@ -30,7 +31,41 @@
 
             <Grid Width="1600" Height="951" RenderTransformOrigin="0.465,0.504" Margin="-1,-1,-1,-1">
 
-                <TabControl TabStripPlacement="Left" ItemsSource="{Binding Source={x:Static vx:ItemsCollection.Items}, Mode=OneWay}" x:Name="table">
+                <TabControl TabStripPlacement="Left" ItemsSource="{Binding Source={x:Static vx:ItemsCollection.Items}}" SelectedItem="{Binding SelectedItems, Mode=TwoWay}" >
+
+                    <TabControl.ItemTemplate>
+                        <!-- this is the header template-->
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Header}">
+                                <!--<TextBlock.ContextMenu>
+                                    <ContextMenu>
+                                        <MenuItem Header="Удалить" Command="{Binding MenuItem_DelCat}"/>
+                                    </ContextMenu>
+                                </TextBlock.ContextMenu>-->
+                            </TextBlock>
+                        </DataTemplate>
+                    </TabControl.ItemTemplate>
+
+                    <TabControl.ContentTemplate>
+                        <!-- this is the body of the TabItem template-->
+                        <DataTemplate>
+                            <ListView ItemsSource="{Binding Content}">
+                                <ListView.View>
+                                    <GridView>
+                                        <!--<GridViewColumn Header="№" />-->
+                                        <GridViewColumn Header="Задача" />
+                                    </GridView>
+                                </ListView.View>
+
+
+                            </ListView>
+                        </DataTemplate>
+                    </TabControl.ContentTemplate>
+
+
+
+
+
                     <TabControl.Resources>
                         <SolidColorBrush x:Key="TabControlNormalBorderBrush" Color="#8C8E94"/>
                         <Style TargetType="{x:Type TabControl}">
@@ -84,29 +119,7 @@
                     </TabControl.Resources>
 
 
-                    <TabControl.ItemTemplate>
-                        <!-- this is the header template-->
-                        <DataTemplate>
-                            <TextBlock
-                    Text="{Binding Name}" />
-                        </DataTemplate>
-                    </TabControl.ItemTemplate>
 
-                    <TabControl.ContentTemplate>
-                        <!-- this is the body of the TabItem template-->
-                        <DataTemplate>
-                            <ListView ItemsSource="{Binding Content}">
-                                <ListView.View>
-                                    <GridView>
-                                        <!--<GridViewColumn Header="№" />-->
-                                        <GridViewColumn Header="Задача" />
-                                    </GridView>
-                                </ListView.View>
-
-
-                            </ListView>
-                        </DataTemplate>
-                    </TabControl.ContentTemplate>
 
                 </TabControl>
 

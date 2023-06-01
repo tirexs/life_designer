@@ -1,18 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace life_designer.Model
 {
     [Table("Data")]
     public class Data
     {
-        [Column("Id")]
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        [Column("IdCategory")]
         public int IdCategory { get; set; }
-        [Column("Text")]
+        public int IdUser { get; set; }
         public string Text { get; set; }
-        [ForeignKey("IdCategory")]
-        public virtual Category Category { get; set; }
 
+        [ForeignKey("IdCategory")]
+        public Category Category { get; set; }
+        [ForeignKey("IdUser")]
+        public UserLogin UserLogin { get; set; }
     }
 }

@@ -6,14 +6,16 @@ namespace life_designer.Model
     public static class ItemsCollection 
     {
         public static ObservableCollection<Item> Items { get; set; } = new ObservableCollection<Item> ();
+        public static Item SelectedItem { get; set; }
+        public static int IdUser { get; set; }
     }
 
 
 
     public class Item
     {
-        public string Name { get; set; }
-        public List<string> Content { get; set; }
+        public string Header { get; set; }
+        public ObservableCollection<string> Content { get; set; }
 
     }
 }

@@ -1,4 +1,4 @@
-﻿using life_designer.Infrastructure;
+﻿using life_designer.Commands;
 using life_designer.Model;
 using life_designer.View;
 using Microsoft.EntityFrameworkCore;
@@ -28,15 +28,41 @@ namespace life_designer.ViewModel
             }
         }
 
+        private string errText;
+        public string ErrText
+        {
+            get { return errText; }
+            set
+            {
+                errText = value;
+                OnPropertyChanged("ErrText");
+            }
+        }
+
         public ICommand RemoveCategoryCommand { get; private set; }
 
  
         private void RemoveCategory(object parameter)
         {
-            using (var context = new DataBaseContext())
+            if (Text == null || Text == "")
             {
-                var category = context.Categorys.Where(c => c.Name == Text).ExecuteDelete();
-                CloseWindowCommand.Execute(null);
+                ErrText = "Обязательно для заполнения";
+            }
+            else
+            {
+                using (var context = new DataBaseContext())
+                {
+                    var category = context.Categorys.Where(c => c.Name == Text).ExecuteDelete();
+                    foreach (var coll in ItemsCollection.Items)
+                    {
+                        if (coll.Header == Text)
+                        {
+                            ItemsCollection.Items.Remove(coll);
+                            break;
+                        }
+                    }
+                    CloseWindowCommand.Execute(null);
+                }
             }
         }
 

@@ -1,5 +1,4 @@
-﻿using life_designer.ViewModel;
-using System.Windows;
+﻿using System.Windows;
 
 
 namespace life_designer.View
@@ -12,17 +11,9 @@ namespace life_designer.View
 
         public MainWindow()
         {
-            InitializeComponent();
-            DataContext = new MainWindowViewModel();
-            
-        }
-
-        
+            InitializeComponent();            
+        }   
     }
-
-
-
-
 }
 
 

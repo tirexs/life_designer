@@ -1,8 +1,7 @@
-﻿using life_designer.Infrastructure;
+﻿using life_designer.Commands;
 using life_designer.Model;
 using life_designer.View;
-using Microsoft.VisualBasic;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using System.Windows.Input;
@@ -26,25 +25,44 @@ namespace life_designer.ViewModel
                 text = value;
                 OnPropertyChanged("Text");
             }
-        }            
+        }
+
+        private string errText;
+        public string ErrText
+        {
+            get { return errText; }
+            set
+            {
+                errText = value;
+                OnPropertyChanged("ErrText");
+            }
+        }
 
         public ICommand AddCategoryCommand { get; private set; }
 
         private void AddCategory(object parameter)
         {
-            using (var context = new DataBaseContext())
+            if (Text == null || Text == "")
             {
-
-                var category = new Category()
-                {
-                    Name = Text
-                };
-
-                context.Categorys.Add(category);
-                context.SaveChanges();
-                ItemsCollection.Items.Add(new Item { Name = Text, Content = new List<string>() });
-                CloseWindowCommand.Execute(null);
+                ErrText = "Обязательно для заполнения";
             }
+            else
+            {
+                using (var context = new DataBaseContext())
+                {
+
+                    var category = new Category()
+                    {
+                        Name = Text,
+                        IdUser = ItemsCollection.IdUser
+                    };
+
+                    context.Categorys.Add(category);
+                    context.SaveChanges();
+                    ItemsCollection.Items.Add(new Item { Header = Text, Content = new ObservableCollection<string>() });
+                    CloseWindowCommand.Execute(null);
+                }
+            }        
         }
 
         public ICommand CloseWindowCommand { get; private set; }

@@ -1,0 +1,25 @@
+﻿<UserControl x:Class="life_designer.View.UserPanel"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:life_designer.View"
+             xmlns:ViewModel="clr-namespace:life_designer.ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+
+
+
+    <Grid Background="White">
+        <TextBlock HorizontalAlignment="Left" Text="{Binding EmailText}" Margin="230,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Text="{Binding LoginText}" Margin="230,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Text="*********" Margin="230,154,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Text="{Binding IdText}" Margin="230,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBlock HorizontalAlignment="Left" Margin="130,123,0,0" TextWrapping="Wrap" Text="Логин" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="130,150,0,0" TextWrapping="Wrap" Text="Пароль" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="130,102,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top"/>
+        <TextBlock HorizontalAlignment="Left" Margin="130,81,0,0" TextWrapping="Wrap" Text="Ваш Id" VerticalAlignment="Top"/>
+        <Button Content="Выйти из учётной записи" Command="{Binding LogOutCommand}" HorizontalAlignment="Left" Margin="167,217,0,0" VerticalAlignment="Top" Height="32" Width="164"/>
+
+    </Grid>
+</UserControl>

@@ -1,5 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -20,9 +19,9 @@ namespace life_designer.ViewModel
             }
         }
 
-        public void Dispose()
+        public virtual void Dispose()
         {
-            throw new NotImplementedException();
+            
         }
 
 

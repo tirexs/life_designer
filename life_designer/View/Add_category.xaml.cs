@@ -7,7 +7,7 @@ namespace life_designer.View
     /// </summary>
     public partial class Add_category : Window
     {
-      
+        
 
         public Add_category()
         {
